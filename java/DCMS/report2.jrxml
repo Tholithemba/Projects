@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="344eae04-1d4e-4a48-9d76-bd8c142b827d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select* from MEDICAL_CONDTION;]]>
+	</queryString>
+	<field name="MED_CONDITION_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HEART_CONDITION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EPILEPSY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ALLERGIES" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DENTAL_SEDATION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BLEEDING_DISORDER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TEETH_SENSITIVE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MEDICATION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SORES_IN_MOUTH" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOUNGE_DIAGNOSIS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HIV_AIDS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MEDICAL_AID_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MEDICAL_AID_NUMBER" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FAMILY_DR_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FAMILY_DR_CONTACT" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="MED_CONDITION_ID_1" class="java.lang.Integer" resetType="Column" calculation="First">
+		<variableExpression><![CDATA[$F{MED_CONDITION_ID}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="194" y="22" width="331" height="44" uuid="b5ac22f1-b1c7-4a11-a025-f8811732c467"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medical Condition Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="32" y="2" width="100" height="20" uuid="151175c4-62f0-4e60-be51-37157a531d00"/>
+				<text><![CDATA[MED_CONDITION_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="2" width="100" height="20" uuid="101e6df3-8526-4a22-99f3-444cc1e19911"/>
+				<text><![CDATA[HEART_CONDITION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="2" width="100" height="20" uuid="d9736914-c600-45ee-88c0-c82c39292bbd"/>
+				<text><![CDATA[EPILEPSY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="2" width="100" height="20" uuid="0759f7c7-512e-4c78-a09e-f6ef2479fff7"/>
+				<text><![CDATA[FAMILY_DR_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="623" y="2" width="100" height="20" uuid="95f5fae6-26e6-4c06-9e38-55afe4495450"/>
+				<text><![CDATA[FAMILY_DR_CONTACT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="32" y="6" width="100" height="20" uuid="d83cba0e-fb5a-44fd-8458-b7517e189ec8"/>
+				<textFieldExpression><![CDATA[$F{MED_CONDITION_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="6" width="100" height="20" uuid="86bcefb5-6700-40ee-a5cf-d7af36255cc4"/>
+				<textFieldExpression><![CDATA[$F{HEART_CONDITION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="6" width="100" height="20" uuid="6d93f134-3aae-4fad-a16f-621d3e1c39fc"/>
+				<textFieldExpression><![CDATA[$F{EPILEPSY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="9" width="100" height="20" uuid="1898b326-b74f-442f-a4ec-4b0bd7d8eff9"/>
+				<textFieldExpression><![CDATA[$F{FAMILY_DR_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="623" y="9" width="100" height="20" uuid="d15e6727-461b-4ff7-8ba4-026e7c039571"/>
+				<textFieldExpression><![CDATA[$F{FAMILY_DR_CONTACT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
