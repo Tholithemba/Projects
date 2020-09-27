@@ -59,13 +59,33 @@ public class Administrator extends javax.swing.JFrame {
         return false;
     }
     
+    private boolean emailExist()
+    {
+        String query_statement = "select* from ADMINISTRATOR where admin_email=?";
+        boolean exist = v.checkUniqueness(query_statement, reg.getEmail());
+         if(exist)
+            return outputStatement("ed email already exist");
+ 
+         return exist;
+    }
+    
+    private boolean usernameExist()
+    {
+        String query_statement = "select* from ADMINISTRATOR where admin_username=?";
+        boolean exist = v.checkUniqueness(query_statement, reg.getUsername());
+         if(exist)
+            return outputStatement("ed username already exist");
+ 
+         return exist;
+    }
+    
    
     private void addTodatabase()
     {
         PreparedStatement ps;
-        String query_statement = "INSERT INTO `ADMINISTRATOR`("
-                + "`firstname`, `lastname`, `admin_username"
-                + "`,`admin_password`) VALUES (?,?,?,?)";
+        String query_statement = "INSERT INTO ADMINISTRATOR("
+                + "firstname, lastname, admin_username, admin_email"
+                + ",admin_password) VALUES (?,?,?,?,?)";
         
         try
         {
@@ -152,7 +172,6 @@ public class Administrator extends javax.swing.JFrame {
         AdminBackToLogin.setBackground(new java.awt.Color(53, 66, 74));
         AdminBackToLogin.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         AdminBackToLogin.setForeground(java.awt.Color.white);
-        AdminBackToLogin.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         AdminBackToLogin.setText("Back");
         AdminBackToLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         AdminBackToLogin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,7 +180,7 @@ public class Administrator extends javax.swing.JFrame {
             }
         });
 
-        closeAdmin.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeAdminMouseClicked(evt);
@@ -247,7 +266,7 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_closeAdminMouseClicked
 
     private void AdminBackToLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminBackToLoginMouseClicked
-        new AdminHome().setVisible(true);
+        new AdminAdmin().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_AdminBackToLoginMouseClicked
 
@@ -256,14 +275,8 @@ public class Administrator extends javax.swing.JFrame {
         
         boolean input_valid = validateInput();
         if(!input_valid)return;
-        
-        String query_statement = "select* from ADMINISTRATOR where admin_username=?";
-        boolean exist = v.checkUniqueness(query_statement,reg.getUsername());
-         if(exist){
-             outputStatement("ed username already exist");
-             return;
-         }
-        
+        if(!emailExist())return;
+        if(!usernameExist())return;
         addTodatabase();
         
         loginDetails();

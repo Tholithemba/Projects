@@ -111,7 +111,7 @@ public class Application extends javax.swing.JFrame {
         txtrequested_amount = new java.awt.Label();
         Application_status = new java.awt.Label();
         txtapplication_balance = new java.awt.Label();
-        closeApplication = new javax.swing.JLabel();
+        Applicationclose = new javax.swing.JLabel();
 
         jLabel1.setBackground(new java.awt.Color(53, 66, 74));
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
@@ -137,7 +137,6 @@ public class Application extends javax.swing.JFrame {
         ApplicationBackToAdmin.setBackground(new java.awt.Color(53, 66, 74));
         ApplicationBackToAdmin.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         ApplicationBackToAdmin.setForeground(java.awt.Color.white);
-        ApplicationBackToAdmin.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         ApplicationBackToAdmin.setText("Back");
         ApplicationBackToAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         ApplicationBackToAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -171,6 +170,17 @@ public class Application extends javax.swing.JFrame {
         txtapplication_balance.setForeground(java.awt.Color.white);
         txtapplication_balance.setText("current amount");
 
+        Applicationclose.setBackground(new java.awt.Color(53, 66, 74));
+        Applicationclose.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        Applicationclose.setForeground(java.awt.Color.white);
+        Applicationclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
+        Applicationclose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
+        Applicationclose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ApplicationcloseMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout applicationLayout = new javax.swing.GroupLayout(application);
         application.setLayout(applicationLayout);
         applicationLayout.setHorizontalGroup(
@@ -178,13 +188,14 @@ public class Application extends javax.swing.JFrame {
             .addGroup(applicationLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(applicationLayout.createSequentialGroup()
-                        .addComponent(ApplicationBackToAdmin)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, applicationLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(label3app1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(276, 276, 276))))
+                        .addGap(276, 276, 276))
+                    .addGroup(applicationLayout.createSequentialGroup()
+                        .addComponent(ApplicationBackToAdmin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Applicationclose, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(applicationLayout.createSequentialGroup()
                 .addGap(199, 199, 199)
                 .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -203,8 +214,10 @@ public class Application extends javax.swing.JFrame {
         applicationLayout.setVerticalGroup(
             applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, applicationLayout.createSequentialGroup()
-                .addComponent(ApplicationBackToAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ApplicationBackToAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Applicationclose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
                 .addComponent(label3app1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(97, 97, 97)
                 .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,46 +236,31 @@ public class Application extends javax.swing.JFrame {
                 .addContainerGap(140, Short.MAX_VALUE))
         );
 
-        closeApplication.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
-        closeApplication.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeApplicationMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(699, Short.MAX_VALUE)
-                .addComponent(closeApplication, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(application, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(application, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(closeApplication, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(366, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(application, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(application, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void closeApplicationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeApplicationMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_closeApplicationMouseClicked
-
     private void ApplicationBackToAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ApplicationBackToAdminMouseClicked
         new AdminHome().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ApplicationBackToAdminMouseClicked
+
+    private void ApplicationcloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ApplicationcloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_ApplicationcloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -302,9 +300,9 @@ public class Application extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ApplicationBackToAdmin;
     private java.awt.Label Application_status;
+    private javax.swing.JLabel Applicationclose;
     private java.awt.Label appl_status;
     private javax.swing.JPanel application;
-    private javax.swing.JLabel closeApplication;
     private javax.swing.JLabel jLabel1;
     private java.awt.Label label11;
     private java.awt.Label label12;

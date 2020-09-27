@@ -150,7 +150,7 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
         jPanel1.setBackground(new java.awt.Color(53, 66, 74));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 3));
 
-        closeApplicantUpdates.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeApplicantUpdates.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeApplicantUpdates.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeApplicantUpdatesMouseClicked(evt);

@@ -74,7 +74,7 @@ public class UpdateAddress extends javax.swing.JFrame {
         updateAddress.setForeground(new java.awt.Color(232, 73, 29));
         updateAddress.setText("Update");
 
-        closeAddress.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeAddress.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeAddress.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeAddressMouseClicked(evt);

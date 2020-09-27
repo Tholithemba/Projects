@@ -60,7 +60,6 @@ public class CheckStatus extends javax.swing.JFrame {
         ApplicationBackToAdmin.setBackground(new java.awt.Color(53, 66, 74));
         ApplicationBackToAdmin.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         ApplicationBackToAdmin.setForeground(java.awt.Color.white);
-        ApplicationBackToAdmin.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         ApplicationBackToAdmin.setText("Back");
         ApplicationBackToAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         ApplicationBackToAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -110,7 +109,7 @@ public class CheckStatus extends javax.swing.JFrame {
         documents.setBackground(new java.awt.Color(53, 66, 74));
         documents.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 3));
 
-        closeCheckStatus.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeCheckStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeCheckStatus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeCheckStatusMouseClicked(evt);
@@ -128,7 +127,6 @@ public class CheckStatus extends javax.swing.JFrame {
         StatusBackTAdminHome.setBackground(new java.awt.Color(53, 66, 74));
         StatusBackTAdminHome.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         StatusBackTAdminHome.setForeground(java.awt.Color.white);
-        StatusBackTAdminHome.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         StatusBackTAdminHome.setText("Back");
         StatusBackTAdminHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         StatusBackTAdminHome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -144,14 +142,14 @@ public class CheckStatus extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, documentsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(StatusBackTAdminHome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 627, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(closeCheckStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(documentsLayout.createSequentialGroup()
                 .addGap(231, 231, 231)
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(docsUploads)
                     .addComponent(applicationStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 517, Short.MAX_VALUE))
         );
         documentsLayout.setVerticalGroup(
             documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +157,7 @@ public class CheckStatus extends javax.swing.JFrame {
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(closeCheckStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(StatusBackTAdminHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                 .addComponent(applicationStatus)
                 .addGap(18, 18, 18)
                 .addComponent(docsUploads)

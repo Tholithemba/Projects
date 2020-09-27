@@ -104,9 +104,9 @@ public class UpdateFunder extends javax.swing.JFrame {
 
         label8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         label8.setForeground(java.awt.Color.white);
-        label8.setText("Update");
+        label8.setText("Update Funder");
 
-        closeFunder.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeFunder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeFunder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeFunderMouseClicked(evt);
@@ -116,7 +116,6 @@ public class UpdateFunder extends javax.swing.JFrame {
         FunderBackToAdminHome.setBackground(new java.awt.Color(53, 66, 74));
         FunderBackToAdminHome.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         FunderBackToAdminHome.setForeground(java.awt.Color.white);
-        FunderBackToAdminHome.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         FunderBackToAdminHome.setText("Back");
         FunderBackToAdminHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         FunderBackToAdminHome.addMouseListener(new java.awt.event.MouseAdapter() {

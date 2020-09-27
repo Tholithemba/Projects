@@ -662,7 +662,6 @@ public class Applicant extends javax.swing.JFrame {
         ApplicantBackToLogin.setBackground(new java.awt.Color(53, 66, 74));
         ApplicantBackToLogin.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         ApplicantBackToLogin.setForeground(java.awt.Color.white);
-        ApplicantBackToLogin.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         ApplicantBackToLogin.setText("Back");
         ApplicantBackToLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         ApplicantBackToLogin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -671,7 +670,7 @@ public class Applicant extends javax.swing.JFrame {
             }
         });
 
-        closeApplicant.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeApplicant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeApplicant.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeApplicantMouseClicked(evt);

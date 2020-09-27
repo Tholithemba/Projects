@@ -24,11 +24,10 @@ public class AdminHome extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        createAllocation = new javax.swing.JLabel();
-        createFunder = new javax.swing.JLabel();
-        createAdmin = new javax.swing.JLabel();
+        adminFunder = new javax.swing.JLabel();
+        adminAdmin = new javax.swing.JLabel();
+        adminApplicant = new javax.swing.JLabel();
         closeAdminHompage = new javax.swing.JLabel();
-        createApplcant = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -36,50 +35,40 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(53, 66, 74));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 3));
 
-        createAllocation.setBackground(new java.awt.Color(53, 66, 74));
-        createAllocation.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        createAllocation.setForeground(new java.awt.Color(232, 73, 29));
-        createAllocation.setText("Allocate Amount");
-        createAllocation.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminFunder.setBackground(new java.awt.Color(53, 66, 74));
+        adminFunder.setFont(new java.awt.Font("Ubuntu", 1, 28)); // NOI18N
+        adminFunder.setForeground(java.awt.Color.white);
+        adminFunder.setText("Funder");
+        adminFunder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                createAllocationMouseClicked(evt);
+                adminFunderMouseClicked(evt);
             }
         });
 
-        createFunder.setBackground(new java.awt.Color(53, 66, 74));
-        createFunder.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        createFunder.setForeground(new java.awt.Color(232, 73, 29));
-        createFunder.setText("Create Funder");
-        createFunder.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminAdmin.setBackground(new java.awt.Color(53, 66, 74));
+        adminAdmin.setFont(new java.awt.Font("Ubuntu", 1, 28)); // NOI18N
+        adminAdmin.setForeground(java.awt.Color.white);
+        adminAdmin.setText("Administrator");
+        adminAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                createFunderMouseClicked(evt);
+                adminAdminMouseClicked(evt);
             }
         });
 
-        createAdmin.setBackground(new java.awt.Color(53, 66, 74));
-        createAdmin.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        createAdmin.setForeground(new java.awt.Color(232, 73, 29));
-        createAdmin.setText("Create Administrator");
-        createAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminApplicant.setBackground(new java.awt.Color(53, 66, 74));
+        adminApplicant.setFont(new java.awt.Font("Ubuntu", 1, 28)); // NOI18N
+        adminApplicant.setForeground(java.awt.Color.white);
+        adminApplicant.setText("Applicant");
+        adminApplicant.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                createAdminMouseClicked(evt);
+                adminApplicantMouseClicked(evt);
             }
         });
 
-        closeAdminHompage.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeAdminHompage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeAdminHompage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeAdminHompageMouseClicked(evt);
-            }
-        });
-
-        createApplcant.setBackground(new java.awt.Color(53, 66, 74));
-        createApplcant.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        createApplcant.setForeground(new java.awt.Color(232, 73, 29));
-        createApplcant.setText("Create Applicant");
-        createApplcant.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                createApplcantMouseClicked(evt);
             }
         });
 
@@ -90,28 +79,25 @@ public class AdminHome extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 778, Short.MAX_VALUE)
                 .addComponent(closeAdminHompage, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(286, 286, 286)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(createAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createApplcant, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(adminFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(287, 287, 287))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(closeAdminHompage, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(createAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(createFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(createAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(createApplcant, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGap(59, 59, 59)
+                .addComponent(adminAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(adminApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(adminFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,7 +108,7 @@ public class AdminHome extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -133,25 +119,21 @@ public class AdminHome extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_closeAdminHompageMouseClicked
 
-    private void createAllocationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createAllocationMouseClicked
-        new Allocation().setVisible(true);
+    private void adminFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminFunderMouseClicked
+        new AdminFunder().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_createAllocationMouseClicked
+    }//GEN-LAST:event_adminFunderMouseClicked
 
-    private void createFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createFunderMouseClicked
+    private void adminAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminAdminMouseClicked
         //int admin_id = 1;
-        new Funder().setVisible(true);
+        new AdminAdmin().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_createFunderMouseClicked
+    }//GEN-LAST:event_adminAdminMouseClicked
 
-    private void createAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createAdminMouseClicked
-        new Administrator().setVisible(true);
+    private void adminApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminApplicantMouseClicked
+        new AdminApplicant().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_createAdminMouseClicked
-
-    private void createApplcantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createApplcantMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_createApplcantMouseClicked
+    }//GEN-LAST:event_adminApplicantMouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,11 +171,10 @@ public class AdminHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel adminAdmin;
+    private javax.swing.JLabel adminApplicant;
+    private javax.swing.JLabel adminFunder;
     private javax.swing.JLabel closeAdminHompage;
-    private javax.swing.JLabel createAdmin;
-    private javax.swing.JLabel createAllocation;
-    private javax.swing.JLabel createApplcant;
-    private javax.swing.JLabel createFunder;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

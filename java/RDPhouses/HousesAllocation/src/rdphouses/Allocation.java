@@ -97,7 +97,6 @@ public class Allocation extends javax.swing.JFrame {
         AllocBackToAdminHome.setBackground(new java.awt.Color(53, 66, 74));
         AllocBackToAdminHome.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         AllocBackToAdminHome.setForeground(java.awt.Color.white);
-        AllocBackToAdminHome.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         AllocBackToAdminHome.setText("Back");
         AllocBackToAdminHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         AllocBackToAdminHome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -106,7 +105,7 @@ public class Allocation extends javax.swing.JFrame {
             }
         });
 
-        closeAllocation.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeAllocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeAllocation.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeAllocationMouseClicked(evt);

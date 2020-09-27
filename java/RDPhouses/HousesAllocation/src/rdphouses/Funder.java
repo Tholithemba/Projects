@@ -14,12 +14,9 @@ import java.sql.SQLException;
  * @author tholithemba
  */
 public class Funder extends javax.swing.JFrame {
-
-    private int admin_id;
+   
     Registration reg = new Registration();
     Validation v = new Validation();
-
-    
     
     /**
      * Creates new form Funder
@@ -28,10 +25,6 @@ public class Funder extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Funder(int adm_id)
-    {
-       this.admin_id = adm_id;
-    }
     private boolean validateInput()
     {
         boolean valid_input = true;
@@ -491,7 +484,7 @@ public class Funder extends javax.swing.JFrame {
         label8.setForeground(java.awt.Color.white);
         label8.setText("Funder");
 
-        closeFunder.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeFunder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeFunder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeFunderMouseClicked(evt);
@@ -501,7 +494,6 @@ public class Funder extends javax.swing.JFrame {
         FunderBackToAdminHome.setBackground(new java.awt.Color(53, 66, 74));
         FunderBackToAdminHome.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         FunderBackToAdminHome.setForeground(java.awt.Color.white);
-        FunderBackToAdminHome.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         FunderBackToAdminHome.setText("Back");
         FunderBackToAdminHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         FunderBackToAdminHome.addMouseListener(new java.awt.event.MouseAdapter() {
