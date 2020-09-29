@@ -17,6 +17,30 @@ public class ApplicantDelete extends javax.swing.JFrame {
     public ApplicantDelete() {
         initComponents();
     }
+    
+    private boolean validateInput()
+    {
+        if(txtApplicantUsername.getText().equals(""))
+        {
+            lblerror_text.setText("Enter Applicant username");
+            return false;
+        }
+        
+        return true;
+    }
+    
+    private boolean deleteApplicant()
+    {
+        Crud crud = new Crud();
+        String query = "delete from APPLICANT where applicant_username=?";
+        
+        return crud.deleteData(query);
+    }
+    
+    private void successMessage()
+    {
+       lblerror_text.setText("data deleted successfully....");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,6 +57,7 @@ public class ApplicantDelete extends javax.swing.JFrame {
         txtApplicantUsername = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btndeleteApplicant = new javax.swing.JButton();
+        lblerror_text = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +90,15 @@ public class ApplicantDelete extends javax.swing.JFrame {
         btndeleteApplicant.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         btndeleteApplicant.setForeground(java.awt.Color.white);
         btndeleteApplicant.setText("Delete");
+        btndeleteApplicant.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btndeleteApplicantMouseClicked(evt);
+            }
+        });
+
+        lblerror_text.setAlignment(java.awt.Label.CENTER);
+        lblerror_text.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblerror_text.setForeground(java.awt.Color.red);
 
         javax.swing.GroupLayout documentsLayout = new javax.swing.GroupLayout(documents);
         documents.setLayout(documentsLayout);
@@ -76,13 +110,18 @@ public class ApplicantDelete extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 870, Short.MAX_VALUE)
                 .addComponent(closeApplicantDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(documentsLayout.createSequentialGroup()
-                .addGap(316, 316, 316)
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtApplicantUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(documentsLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(btndeleteApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(316, 316, 316)
+                        .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtApplicantUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(documentsLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(btndeleteApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         documentsLayout.setVerticalGroup(
@@ -91,13 +130,15 @@ public class ApplicantDelete extends javax.swing.JFrame {
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(closeApplicantDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BackTApplicantHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
+                .addGap(21, 21, 21)
+                .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtApplicantUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
                 .addComponent(btndeleteApplicant)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,6 +163,13 @@ public class ApplicantDelete extends javax.swing.JFrame {
         new AdminAdmin().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BackTApplicantHomeMouseClicked
+
+    private void btndeleteApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteApplicantMouseClicked
+        
+        if(!validateInput())return;
+        if(!deleteApplicant())return;
+        successMessage();
+    }//GEN-LAST:event_btndeleteApplicantMouseClicked
 
     /**
      * @param args the command line arguments
@@ -164,6 +212,7 @@ public class ApplicantDelete extends javax.swing.JFrame {
     private javax.swing.JLabel closeApplicantDelete;
     private javax.swing.JPanel documents;
     private javax.swing.JLabel jLabel1;
+    private java.awt.Label lblerror_text;
     private javax.swing.JTextField txtApplicantUsername;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,12 +18,12 @@ import javax.swing.JOptionPane;
  */
 public class RequiredFields {
 
-  private String field_name;
-    private String field_data;
-    private String username;
+    private static String field_name;
+    private static String field_data;
+    private static String username;
     
     public void setFieldName(String set_field){
-        this.field_name = set_field;
+        field_name = set_field;
     }
     
     public String getFieldName(){
@@ -31,7 +31,7 @@ public class RequiredFields {
     }
     
     public void setFieldData(String set_field_data){
-        this.field_data = set_field_data;
+        field_data = set_field_data;
     }
     
     public String getFieldData(){
@@ -39,7 +39,7 @@ public class RequiredFields {
     }
     
     public void setRFUsername(String set_username){
-        this.username = set_username;
+        username = set_username;
     }
     
     public String getRFUsername(){

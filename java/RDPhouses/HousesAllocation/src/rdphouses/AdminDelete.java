@@ -18,6 +18,29 @@ public class AdminDelete extends javax.swing.JFrame {
         initComponents();
     }
 
+    private boolean validateInput()
+    {
+        if(textAdminUsername.getText().equals(""))
+        {
+            error_text.setText("Enter username");
+            return false;
+        }
+       
+        return true;
+    }
+    
+    private boolean deleteAdmin()
+    {
+        Crud crud = new Crud();
+        String query = "delete from ADMINISTRATOR where admin_username=?";
+        
+        return crud.deleteData(query);
+    }
+    
+    private void successMessage()
+    {
+       error_text.setText("data deleted successfully....");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,9 +53,10 @@ public class AdminDelete extends javax.swing.JFrame {
         documents = new javax.swing.JPanel();
         closeAdminDelete = new javax.swing.JLabel();
         BackTAdminAdmin = new javax.swing.JLabel();
-        txtAdminUsername = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btndeleteAdmin = new javax.swing.JButton();
+        error_text = new java.awt.Label();
+        textAdminUsername = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -66,6 +90,16 @@ public class AdminDelete extends javax.swing.JFrame {
         btndeleteAdmin.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         btndeleteAdmin.setForeground(java.awt.Color.white);
         btndeleteAdmin.setText("Delete");
+        btndeleteAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btndeleteAdminMouseClicked(evt);
+            }
+        });
+
+        error_text.setAlignment(java.awt.Label.CENTER);
+        error_text.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        error_text.setForeground(java.awt.Color.red);
+        error_text.setName(""); // NOI18N
 
         javax.swing.GroupLayout documentsLayout = new javax.swing.GroupLayout(documents);
         documents.setLayout(documentsLayout);
@@ -76,16 +110,23 @@ public class AdminDelete extends javax.swing.JFrame {
                 .addComponent(BackTAdminAdmin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 791, Short.MAX_VALUE)
                 .addComponent(closeAdminDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(documentsLayout.createSequentialGroup()
+                .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addGap(241, 241, 241)
+                        .addComponent(error_text, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addGap(325, 325, 325)
+                        .addComponent(btndeleteAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(textAdminUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(documentsLayout.createSequentialGroup()
                     .addGap(308, 308, 308)
-                    .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtAdminUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(documentsLayout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(btndeleteAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(309, Short.MAX_VALUE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(433, Short.MAX_VALUE)))
         );
         documentsLayout.setVerticalGroup(
             documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,16 +134,18 @@ public class AdminDelete extends javax.swing.JFrame {
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(closeAdminDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BackTAdminAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(error_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(textAdminUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(btndeleteAdmin)
+                .addContainerGap(139, Short.MAX_VALUE))
             .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(documentsLayout.createSequentialGroup()
                     .addGap(117, 117, 117)
                     .addComponent(jLabel1)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(txtAdminUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(71, 71, 71)
-                    .addComponent(btndeleteAdmin)
-                    .addContainerGap(118, Short.MAX_VALUE)))
+                    .addContainerGap(268, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -128,6 +171,13 @@ public class AdminDelete extends javax.swing.JFrame {
         new AdminAdmin().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BackTAdminAdminMouseClicked
+
+    private void btndeleteAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteAdminMouseClicked
+        
+        if(!validateInput())return;
+        if(!deleteAdmin())return;
+         successMessage();
+    }//GEN-LAST:event_btndeleteAdminMouseClicked
 
     /**
      * @param args the command line arguments
@@ -169,7 +219,8 @@ public class AdminDelete extends javax.swing.JFrame {
     private javax.swing.JButton btndeleteAdmin;
     private javax.swing.JLabel closeAdminDelete;
     private javax.swing.JPanel documents;
+    private java.awt.Label error_text;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField txtAdminUsername;
+    private javax.swing.JTextField textAdminUsername;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,6 +17,30 @@ public class FunderDelete extends javax.swing.JFrame {
     public FunderDelete() {
         initComponents();
     }
+    
+    private boolean validateInput()
+    {
+        if(txtfunderUsername.getText().equals(""))
+        {
+            lblerror_text.setText("Enter Applicant username");
+            return false;
+        }
+        
+        return true;
+    }
+    
+    private boolean deleteFunder()
+    {
+        Crud crud = new Crud();
+        String query = "delete from FUNDER where funder_email=?";
+        
+        return crud.deleteData(query);
+    }
+    
+    private void successMessage()
+    {
+       lblerror_text.setText("data deleted successfully....");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,6 +57,7 @@ public class FunderDelete extends javax.swing.JFrame {
         txtfunderUsername = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btndeleteFunder = new javax.swing.JButton();
+        lblerror_text = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -66,6 +91,15 @@ public class FunderDelete extends javax.swing.JFrame {
         btndeleteFunder.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         btndeleteFunder.setForeground(java.awt.Color.white);
         btndeleteFunder.setText("Delete");
+        btndeleteFunder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btndeleteFunderMouseClicked(evt);
+            }
+        });
+
+        lblerror_text.setAlignment(java.awt.Label.CENTER);
+        lblerror_text.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblerror_text.setForeground(java.awt.Color.red);
 
         javax.swing.GroupLayout documentsLayout = new javax.swing.GroupLayout(documents);
         documents.setLayout(documentsLayout);
@@ -77,13 +111,18 @@ public class FunderDelete extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 806, Short.MAX_VALUE)
                 .addComponent(closeFunderDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(documentsLayout.createSequentialGroup()
-                .addGap(316, 316, 316)
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtfunderUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(documentsLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(btndeleteFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(316, 316, 316)
+                        .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtfunderUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(documentsLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(btndeleteFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addGap(261, 261, 261)
+                        .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         documentsLayout.setVerticalGroup(
@@ -92,13 +131,15 @@ public class FunderDelete extends javax.swing.JFrame {
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(closeFunderDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BackTAdminAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
+                .addGap(29, 29, 29)
+                .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtfunderUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
                 .addComponent(btndeleteFunder)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,6 +165,13 @@ public class FunderDelete extends javax.swing.JFrame {
         new AdminAdmin().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BackTAdminAdminMouseClicked
+
+    private void btndeleteFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteFunderMouseClicked
+       
+        if(!validateInput())return;
+        if(!deleteFunder())return;
+        successMessage();
+    }//GEN-LAST:event_btndeleteFunderMouseClicked
 
     /**
      * @param args the command line arguments
@@ -166,6 +214,7 @@ public class FunderDelete extends javax.swing.JFrame {
     private javax.swing.JLabel closeFunderDelete;
     private javax.swing.JPanel documents;
     private javax.swing.JLabel jLabel1;
+    private java.awt.Label lblerror_text;
     private javax.swing.JTextField txtfunderUsername;
     // End of variables declaration//GEN-END:variables
 }

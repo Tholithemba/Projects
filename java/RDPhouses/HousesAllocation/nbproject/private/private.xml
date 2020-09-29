@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/tholithemba/Desktop/github/java/java/RDPhouses/HousesAllocation/src/rdphouses/ApplicantHome.java</file>
-            <file>file:/home/tholithemba/Desktop/github/java/java/RDPhouses/HousesAllocation/src/rdphouses/AdminHome.java</file>
-            <file>file:/home/tholithemba/Desktop/github/java/java/RDPhouses/HousesAllocation/src/rdphouses/CheckStatus.java</file>
+            <file>file:/home/tholithemba/Desktop/github/java/java/RDPhouses/HousesAllocation/src/rdphouses/AdminUpdates.java</file>
+            <file>file:/home/tholithemba/Desktop/github/java/java/RDPhouses/HousesAllocation/src/rdphouses/RequiredFields.java</file>
+            <file>file:/home/tholithemba/Desktop/github/java/java/RDPhouses/HousesAllocation/src/rdphouses/AdminAdmin.java</file>
+            <file>file:/home/tholithemba/Desktop/github/java/java/RDPhouses/HousesAllocation/src/rdphouses/Crud.java</file>
         </group>
     </open-files>
 </project-private>
