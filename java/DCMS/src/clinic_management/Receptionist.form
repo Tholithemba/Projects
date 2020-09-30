@@ -221,7 +221,7 @@
         <Component class="javax.swing.JLabel" name="closeRecept">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/tholithemba/Desktop/github/java/RDPhouses/close.png"/>
+              <Image iconType="3" name="/clinic_management/close.png"/>
             </Property>
           </Properties>
           <Events>
@@ -249,9 +249,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Back"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

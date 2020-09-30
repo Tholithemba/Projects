@@ -29,8 +29,8 @@ public class AdminFunder extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         deleteFunder = new javax.swing.JLabel();
-        updateAdministrator = new javax.swing.JLabel();
-        updateApplicant = new javax.swing.JLabel();
+        createFunder = new javax.swing.JLabel();
+        updateFunder = new javax.swing.JLabel();
         closeAdminFunder = new javax.swing.JLabel();
         BackTAdminHome = new javax.swing.JLabel();
 
@@ -50,23 +50,23 @@ public class AdminFunder extends javax.swing.JFrame {
             }
         });
 
-        updateAdministrator.setBackground(new java.awt.Color(53, 66, 74));
-        updateAdministrator.setFont(new java.awt.Font("Ubuntu", 1, 28)); // NOI18N
-        updateAdministrator.setForeground(java.awt.Color.white);
-        updateAdministrator.setText("Create Funder");
-        updateAdministrator.addMouseListener(new java.awt.event.MouseAdapter() {
+        createFunder.setBackground(new java.awt.Color(53, 66, 74));
+        createFunder.setFont(new java.awt.Font("Ubuntu", 1, 28)); // NOI18N
+        createFunder.setForeground(java.awt.Color.white);
+        createFunder.setText("Create Funder");
+        createFunder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                updateAdministratorMouseClicked(evt);
+                createFunderMouseClicked(evt);
             }
         });
 
-        updateApplicant.setBackground(new java.awt.Color(53, 66, 74));
-        updateApplicant.setFont(new java.awt.Font("Ubuntu", 1, 28)); // NOI18N
-        updateApplicant.setForeground(java.awt.Color.white);
-        updateApplicant.setText("Update Funder");
-        updateApplicant.addMouseListener(new java.awt.event.MouseAdapter() {
+        updateFunder.setBackground(new java.awt.Color(53, 66, 74));
+        updateFunder.setFont(new java.awt.Font("Ubuntu", 1, 28)); // NOI18N
+        updateFunder.setForeground(java.awt.Color.white);
+        updateFunder.setText("Update Funder");
+        updateFunder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                updateApplicantMouseClicked(evt);
+                updateFunderMouseClicked(evt);
             }
         });
 
@@ -101,8 +101,8 @@ public class AdminFunder extends javax.swing.JFrame {
                 .addContainerGap(324, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(deleteFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateAdministrator, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(createFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(302, 302, 302))
         );
         jPanel1Layout.setVerticalGroup(
@@ -112,9 +112,9 @@ public class AdminFunder extends javax.swing.JFrame {
                     .addComponent(closeAdminFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BackTAdminHome, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
-                .addComponent(updateAdministrator, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(createFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(updateApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(updateFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(deleteFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(114, Short.MAX_VALUE))
@@ -136,19 +136,20 @@ public class AdminFunder extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteFunderMouseClicked
-    
+        new FunderDelete().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_deleteFunderMouseClicked
 
-    private void updateAdministratorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateAdministratorMouseClicked
+    private void createFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createFunderMouseClicked
        
         new Funder().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_updateAdministratorMouseClicked
+    }//GEN-LAST:event_createFunderMouseClicked
 
-    private void updateApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateApplicantMouseClicked
-        new Administrator().setVisible(true);
+    private void updateFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateFunderMouseClicked
+        new FunderUpdate().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_updateApplicantMouseClicked
+    }//GEN-LAST:event_updateFunderMouseClicked
 
     private void closeAdminFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeAdminFunderMouseClicked
         System.exit(0);
@@ -197,9 +198,9 @@ public class AdminFunder extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackTAdminHome;
     private javax.swing.JLabel closeAdminFunder;
+    private javax.swing.JLabel createFunder;
     private javax.swing.JLabel deleteFunder;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel updateAdministrator;
-    private javax.swing.JLabel updateApplicant;
+    private javax.swing.JLabel updateFunder;
     // End of variables declaration//GEN-END:variables
 }

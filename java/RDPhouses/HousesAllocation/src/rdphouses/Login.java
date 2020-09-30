@@ -12,11 +12,35 @@ public class Login extends javax.swing.JFrame {
 
     Registration reg = new Registration();
     Validation v = new Validation();
+    private static boolean admin_ctive;
+    private static boolean applicant_active;
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        admin_ctive = false;
+        applicant_active = false;
+    }
+    
+    public void setadminActive()
+    {
+        admin_ctive  = true;
+    }
+    
+    public boolean getadminActive()
+    {
+        return admin_ctive;
+    }
+    
+    public void setapplicantActive()
+    {
+        applicant_active  = true;
+    }
+    
+    public boolean getapplicantActive()
+    {
+        return applicant_active;
     }
  
     public boolean validateInput(){

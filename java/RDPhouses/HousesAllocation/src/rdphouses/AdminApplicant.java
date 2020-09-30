@@ -139,7 +139,8 @@ public class AdminApplicant extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteApplicantMouseClicked
-       
+       new ApplicantDelete().setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_deleteApplicantMouseClicked
 
     private void createApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createApplicantMouseClicked
@@ -149,7 +150,8 @@ public class AdminApplicant extends javax.swing.JFrame {
     }//GEN-LAST:event_createApplicantMouseClicked
 
     private void updateApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateApplicantMouseClicked
-       
+        new ApplicantUpdates().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_updateApplicantMouseClicked
 
     private void closeAdminApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeAdminApplicantMouseClicked

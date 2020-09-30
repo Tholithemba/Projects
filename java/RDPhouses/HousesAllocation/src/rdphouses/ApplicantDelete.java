@@ -60,6 +60,7 @@ public class ApplicantDelete extends javax.swing.JFrame {
         lblerror_text = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         documents.setBackground(new java.awt.Color(53, 66, 74));
         documents.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 3));
@@ -110,18 +111,17 @@ public class ApplicantDelete extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 870, Short.MAX_VALUE)
                 .addComponent(closeApplicantDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(documentsLayout.createSequentialGroup()
+                .addGap(305, 305, 305)
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(documentsLayout.createSequentialGroup()
-                        .addGap(316, 316, 316)
+                        .addGap(35, 35, 35)
                         .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtApplicantUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(documentsLayout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(btndeleteApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(documentsLayout.createSequentialGroup()
-                        .addGap(281, 281, 281)
-                        .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         documentsLayout.setVerticalGroup(
@@ -130,7 +130,7 @@ public class ApplicantDelete extends javax.swing.JFrame {
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(closeApplicantDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BackTApplicantHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(20, 20, 20)
                 .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(jLabel1)
@@ -138,7 +138,7 @@ public class ApplicantDelete extends javax.swing.JFrame {
                 .addComponent(txtApplicantUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
                 .addComponent(btndeleteApplicant)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,6 +153,7 @@ public class ApplicantDelete extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void closeApplicantDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeApplicantDeleteMouseClicked
@@ -160,7 +161,7 @@ public class ApplicantDelete extends javax.swing.JFrame {
     }//GEN-LAST:event_closeApplicantDeleteMouseClicked
 
     private void BackTApplicantHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTApplicantHomeMouseClicked
-        new AdminAdmin().setVisible(true);
+        new AdminApplicant().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BackTApplicantHomeMouseClicked
 

@@ -313,7 +313,7 @@ public class Bill extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(25, 25, 112));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow, 3));
 
-        closeBill.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeBill.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeBillMouseClicked(evt);
@@ -323,7 +323,6 @@ public class Bill extends javax.swing.JFrame {
         billBackToRP.setBackground(new java.awt.Color(53, 66, 74));
         billBackToRP.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         billBackToRP.setForeground(java.awt.Color.white);
-        billBackToRP.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         billBackToRP.setText("Back");
         billBackToRP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         billBackToRP.addMouseListener(new java.awt.event.MouseAdapter() {

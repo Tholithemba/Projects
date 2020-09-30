@@ -1,4 +1,4 @@
-/*
+                /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -55,8 +56,8 @@ public class Applicant extends javax.swing.JFrame {
         if(reg.getIDNumber().equals(""))
            return outputStatement(" ID number");
 
-        if(reg.getDOB().equals(""))
-            return outputStatement(" date of birth name");
+        if(!validateDate())
+            return outputStatement(" or Select date of birth");
         
         if(reg.getGender().equals("Select"))
             return outputStatement(" or select gender");
@@ -177,14 +178,11 @@ public class Applicant extends javax.swing.JFrame {
             ps.setString(10, reg.getPassword());
             ps.setString(11, reg.getStatus());
             ps.setString(12, reg.getPrefCommMedium());
-            try {
-                input_stream = new FileInputStream(new File(reg.getProofOFIncomeFile()));
-                ps.setBlob(13, input_stream);
-                input_stream = new FileInputStream(new File(reg.getIDFile()));
-                ps.setBlob(14, input_stream);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(Applicant.class.getName()).log(Level.SEVERE, null, ex);
-            } 
+            
+            input_stream = new FileInputStream(new File(reg.getProofOFIncomeFile()));
+            ps.setBlob(13, input_stream);
+            input_stream = new FileInputStream(new File(reg.getIDFile()));
+            ps.setBlob(14, input_stream);
             ps.setString(13, reg.getAddress1());
             ps.setString(14, reg.getAddress2());
             ps.setInt(15, postal_code);
@@ -197,9 +195,9 @@ public class Applicant extends javax.swing.JFrame {
                 clearCells();
             }
         }
-        catch(SQLException sq)
+        catch(SQLException | FileNotFoundException ex)
         {
-            sq.getStackTrace();
+            Logger.getLogger(Applicant.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -213,7 +211,6 @@ public class Applicant extends javax.swing.JFrame {
         applicant_firstname.setText("");
         applicant_lastname.setText("");
         applicant_IDno.setText("");
-        applicant_DOB.setText("");
         applicant_contact.setText("");
         applicant_email.setText("");
         income_filepath.setText("");
@@ -228,7 +225,6 @@ public class Applicant extends javax.swing.JFrame {
         reg.setFirstname(applicant_firstname.getText());
         reg.setLastname(applicant_lastname.getText());
         reg.setIDNumber(applicant_IDno.getText());
-        reg.setDOB(applicant_DOB.getText());
         reg.setGender((String)select_gender.getSelectedItem());
         reg.setEthinicity((String)select_ethinicity.getSelectedItem());
         reg.setContactNo(applicant_contact.getText());
@@ -242,6 +238,15 @@ public class Applicant extends javax.swing.JFrame {
         reg.setAddress2(applicant_addr2.getText());
         reg.setPostalCode(applicant_postalcode.getText());
         uploadeFiles();
+    }
+    
+    private boolean validateDate()
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        if(applicant_DOB.getDate() == null)return false;
+        String str_date = sdf.format(applicant_DOB.getDate());
+        reg.setDOB(str_date);
+        return true;
     }
 
     /**
@@ -270,13 +275,13 @@ public class Applicant extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         applicant_lastname = new java.awt.TextField();
         applicant_IDno = new java.awt.TextField();
-        applicant_DOB = new java.awt.TextField();
         applicant_firstname = new java.awt.TextField();
         label4 = new java.awt.Label();
         label18 = new java.awt.Label();
         label20 = new java.awt.Label();
         select_gender = new javax.swing.JComboBox<>();
         select_ethinicity = new javax.swing.JComboBox<>();
+        applicant_DOB = new com.toedter.calendar.JDateChooser();
         label8 = new java.awt.Label();
         jPanel5 = new javax.swing.JPanel();
         label7 = new java.awt.Label();
@@ -452,9 +457,9 @@ public class Applicant extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(applicant_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(applicant_DOB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(select_gender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(select_ethinicity, 0, 152, Short.MAX_VALUE))))
+                            .addComponent(select_ethinicity, 0, 152, Short.MAX_VALUE)
+                            .addComponent(applicant_DOB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -473,18 +478,19 @@ public class Applicant extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(applicant_IDno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(applicant_DOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(select_gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(label18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(applicant_IDno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(applicant_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(applicant_DOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(select_gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -841,7 +847,7 @@ public class Applicant extends javax.swing.JFrame {
     private javax.swing.JLabel ApplicantBackToLogin;
     private java.awt.Label RegisterApplicant;
     private java.awt.Label alreadyUserApplicant;
-    private java.awt.TextField applicant_DOB;
+    private com.toedter.calendar.JDateChooser applicant_DOB;
     private java.awt.TextField applicant_IDno;
     private java.awt.TextField applicant_addr1;
     private java.awt.TextField applicant_addr2;

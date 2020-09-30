@@ -353,7 +353,7 @@ public class Consultation extends javax.swing.JFrame {
         show_name1.setForeground(java.awt.Color.white);
         show_name1.setText("patient email");
 
-        closeConsultation.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeConsultation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeConsultation.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeConsultationMouseClicked(evt);
@@ -363,7 +363,6 @@ public class Consultation extends javax.swing.JFrame {
         ConsultBackToRecptH.setBackground(new java.awt.Color(53, 66, 74));
         ConsultBackToRecptH.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         ConsultBackToRecptH.setForeground(java.awt.Color.white);
-        ConsultBackToRecptH.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         ConsultBackToRecptH.setText("Back");
         ConsultBackToRecptH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         ConsultBackToRecptH.addMouseListener(new java.awt.event.MouseAdapter() {

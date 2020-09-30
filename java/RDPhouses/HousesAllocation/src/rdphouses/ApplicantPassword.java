@@ -18,6 +18,64 @@ public class ApplicantPassword extends javax.swing.JFrame {
         initComponents();
     }
 
+    //validate input from the user
+    private boolean validInput()
+    {
+        GenerateRandomChar grc = new GenerateRandomChar();
+        String orig_password = String.valueOf(jpfpasswordorig.getPassword());
+        String retyped_password = String.valueOf(jpfpasswordver.getPassword());
+        if(jpfpasswordorig.getPassword().length != 10)
+        {
+            lblerror_text.setText("the lenght of password must be ten charectors");
+            clearCells();
+            return false;
+        }
+        
+        if(!orig_password.equals(retyped_password))
+        {
+            lblerror_text.setText("Password does not match");
+            clearCells();
+            return false;           
+        }
+        //udf.setFieldData(grc.passwordEncryption(orig_password));
+        
+        return true;
+    }
+    //end of validInput() method
+    
+    //clear error message
+    private void clearErrorText()
+    {
+        lblerror_text.setText("");
+    }
+    
+    //clear input textfields
+    private void clearCells()
+    {
+        jpfpasswordorig.setText("");
+        jpfpasswordver.setText("");
+    }
+    
+    //update password
+    private boolean updatePassword(){
+ 
+        Crud crud = new Crud();
+        String query = "update APPLICANT set applicant_password=? where "
+                + "applicant_username=?";
+        
+        return crud.updateData(query);
+    }
+   
+    
+    //back to doctor home page if doctor is active
+    //otherwise back to patient home page
+    private void backTo()
+    {
+       new ApplicantHome().setVisible(true);
+        this.setVisible(false);
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,8 +88,15 @@ public class ApplicantPassword extends javax.swing.JFrame {
         documents = new javax.swing.JPanel();
         closeApplicPassword = new javax.swing.JLabel();
         StatusBackTApplHome = new javax.swing.JLabel();
+        jpfpasswordorig = new javax.swing.JPasswordField();
+        jpfpasswordver = new javax.swing.JPasswordField();
+        btnUpdatePassword = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblerror_text = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         documents.setBackground(new java.awt.Color(53, 66, 74));
         documents.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 3));
@@ -54,6 +119,27 @@ public class ApplicantPassword extends javax.swing.JFrame {
             }
         });
 
+        btnUpdatePassword.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        btnUpdatePassword.setForeground(java.awt.Color.blue);
+        btnUpdatePassword.setText("Update");
+        btnUpdatePassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnUpdatePasswordMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.white);
+        jLabel1.setText("Retype Password");
+
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.white);
+        jLabel2.setText("Password");
+
+        lblerror_text.setAlignment(java.awt.Label.CENTER);
+        lblerror_text.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        lblerror_text.setForeground(java.awt.Color.red);
+
         javax.swing.GroupLayout documentsLayout = new javax.swing.GroupLayout(documents);
         documents.setLayout(documentsLayout);
         documentsLayout.setHorizontalGroup(
@@ -63,6 +149,21 @@ public class ApplicantPassword extends javax.swing.JFrame {
                 .addComponent(StatusBackTApplHome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 733, Short.MAX_VALUE)
                 .addComponent(closeApplicPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(documentsLayout.createSequentialGroup()
+                .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addGap(290, 290, 290)
+                        .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnUpdatePassword, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+                                .addComponent(jpfpasswordorig)
+                                .addComponent(jpfpasswordver)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         documentsLayout.setVerticalGroup(
             documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,7 +171,19 @@ public class ApplicantPassword extends javax.swing.JFrame {
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(closeApplicPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(StatusBackTApplHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpfpasswordorig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpfpasswordver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(btnUpdatePassword)
+                .addGap(57, 57, 57))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -85,6 +198,7 @@ public class ApplicantPassword extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void closeApplicPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeApplicPasswordMouseClicked
@@ -92,9 +206,17 @@ public class ApplicantPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_closeApplicPasswordMouseClicked
 
     private void StatusBackTApplHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StatusBackTApplHomeMouseClicked
-        new AdminHome().setVisible(true);
-        this.setVisible(false);
+        backTo();
     }//GEN-LAST:event_StatusBackTApplHomeMouseClicked
+
+    private void btnUpdatePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdatePasswordMouseClicked
+        
+        clearErrorText();
+        if(!validInput())return;
+        if(!updatePassword())return;
+        
+        clearCells();
+    }//GEN-LAST:event_btnUpdatePasswordMouseClicked
 
     /**
      * @param args the command line arguments
@@ -133,7 +255,13 @@ public class ApplicantPassword extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel StatusBackTApplHome;
+    private javax.swing.JButton btnUpdatePassword;
     private javax.swing.JLabel closeApplicPassword;
     private javax.swing.JPanel documents;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPasswordField jpfpasswordorig;
+    private javax.swing.JPasswordField jpfpasswordver;
+    private java.awt.Label lblerror_text;
     // End of variables declaration//GEN-END:variables
 }

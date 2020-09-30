@@ -145,7 +145,7 @@ public class UpdatePatient extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(25, 25, 112));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow, 3));
 
-        closeUpdateDatabase.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeUpdateDatabase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeUpdateDatabase.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeUpdateDatabaseMouseClicked(evt);
@@ -191,7 +191,6 @@ public class UpdatePatient extends javax.swing.JFrame {
         PatientBackToPH.setBackground(new java.awt.Color(53, 66, 74));
         PatientBackToPH.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         PatientBackToPH.setForeground(java.awt.Color.white);
-        PatientBackToPH.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         PatientBackToPH.setText("Back");
         PatientBackToPH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         PatientBackToPH.addMouseListener(new java.awt.event.MouseAdapter() {

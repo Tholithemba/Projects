@@ -175,7 +175,7 @@ public class Receptionist extends javax.swing.JFrame {
             }
         });
 
-        closeRecept.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeRecept.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeRecept.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeReceptMouseClicked(evt);
@@ -189,7 +189,6 @@ public class Receptionist extends javax.swing.JFrame {
         ReceptBackToL.setBackground(new java.awt.Color(53, 66, 74));
         ReceptBackToL.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         ReceptBackToL.setForeground(java.awt.Color.white);
-        ReceptBackToL.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         ReceptBackToL.setText("Back");
         ReceptBackToL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         ReceptBackToL.addMouseListener(new java.awt.event.MouseAdapter() {

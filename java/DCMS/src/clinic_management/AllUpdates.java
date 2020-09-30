@@ -241,7 +241,7 @@ public class AllUpdates extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(25, 25, 112));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow, 3));
 
-        closeAllUpdates.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeAllUpdates.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeAllUpdates.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeAllUpdatesMouseClicked(evt);
@@ -295,7 +295,6 @@ public class AllUpdates extends javax.swing.JFrame {
         allBackToRecptH.setBackground(new java.awt.Color(53, 66, 74));
         allBackToRecptH.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         allBackToRecptH.setForeground(java.awt.Color.white);
-        allBackToRecptH.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         allBackToRecptH.setText("Back");
         allBackToRecptH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         allBackToRecptH.addMouseListener(new java.awt.event.MouseAdapter() {

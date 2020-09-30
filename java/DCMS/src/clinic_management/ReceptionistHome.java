@@ -47,7 +47,6 @@ public class ReceptionistHome extends javax.swing.JFrame {
         gotoConsultation = new java.awt.Label();
         closeReceptHome = new javax.swing.JLabel();
 
-        closeRecept.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
         closeRecept.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeReceptMouseClicked(evt);
@@ -105,7 +104,7 @@ public class ReceptionistHome extends javax.swing.JFrame {
             }
         });
 
-        closeReceptHome.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeReceptHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeReceptHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeReceptHomeMouseClicked(evt);

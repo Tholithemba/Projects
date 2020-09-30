@@ -8,8 +8,6 @@ package rdphouses;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,14 +24,17 @@ public class Crud {
         
         try{
             ps = Connect2database.getConnection().prepareStatement(query);
+            ps.setString(1, reg.getPassword());
+            ps.setString(2, reg.getUsername());
             
-            ps.setString(1, reg.getUsername());
+            if(ps.executeUpdate() > 0)
+                return true;
             
         } catch (SQLException ex) {
-            Logger.getLogger(Crud.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Enter existing username");
         }
         
-        return true;
+        return false;
     }
     
     public boolean deleteData(String query)

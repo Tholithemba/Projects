@@ -61,8 +61,8 @@
                   <EmptySpace pref="324" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="deleteFunder" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
-                      <Component id="updateAdministrator" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
-                      <Component id="updateApplicant" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
+                      <Component id="createFunder" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
+                      <Component id="updateFunder" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
               </Group>
@@ -76,9 +76,9 @@
                       <Component id="BackTAdminHome" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="updateAdministrator" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="createFunder" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="updateApplicant" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="updateFunder" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="deleteFunder" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace pref="114" max="32767" attributes="0"/>
@@ -104,7 +104,7 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="deleteFunderMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="updateAdministrator">
+        <Component class="javax.swing.JLabel" name="createFunder">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4a" green="42" red="35" type="rgb"/>
@@ -118,10 +118,10 @@
             <Property name="text" type="java.lang.String" value="Create Funder"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updateAdministratorMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="createFunderMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="updateApplicant">
+        <Component class="javax.swing.JLabel" name="updateFunder">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4a" green="42" red="35" type="rgb"/>
@@ -135,7 +135,7 @@
             <Property name="text" type="java.lang.String" value="Update Funder"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updateApplicantMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updateFunderMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="closeAdminFunder">

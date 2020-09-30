@@ -53,7 +53,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="BackTAdminAdmin" min="-2" max="-2" attributes="0"/>
+                  <Component id="BackTAdminFunder" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="806" max="32767" attributes="0"/>
                   <Component id="closeFunderDelete" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
@@ -84,7 +84,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="closeFunderDelete" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="BackTAdminAdmin" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="BackTAdminFunder" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="lblerror_text" min="-2" max="-2" attributes="0"/>
@@ -110,7 +110,7 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="closeFunderDeleteMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="BackTAdminAdmin">
+        <Component class="javax.swing.JLabel" name="BackTAdminFunder">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4a" green="42" red="35" type="rgb"/>
@@ -131,7 +131,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackTAdminAdminMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackTAdminFunderMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtfunderUsername">

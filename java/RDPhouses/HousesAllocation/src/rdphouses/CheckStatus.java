@@ -189,7 +189,7 @@ public class CheckStatus extends javax.swing.JFrame {
     }//GEN-LAST:event_closeCheckStatusMouseClicked
 
     private void StatusBackTAdminHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StatusBackTAdminHomeMouseClicked
-        new AdminHome().setVisible(true);
+        new ApplicantHome().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_StatusBackTAdminHomeMouseClicked
 

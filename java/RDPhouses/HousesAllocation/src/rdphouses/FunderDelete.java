@@ -53,7 +53,7 @@ public class FunderDelete extends javax.swing.JFrame {
 
         documents = new javax.swing.JPanel();
         closeFunderDelete = new javax.swing.JLabel();
-        BackTAdminAdmin = new javax.swing.JLabel();
+        BackTAdminFunder = new javax.swing.JLabel();
         txtfunderUsername = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btndeleteFunder = new javax.swing.JButton();
@@ -72,14 +72,14 @@ public class FunderDelete extends javax.swing.JFrame {
             }
         });
 
-        BackTAdminAdmin.setBackground(new java.awt.Color(53, 66, 74));
-        BackTAdminAdmin.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        BackTAdminAdmin.setForeground(java.awt.Color.white);
-        BackTAdminAdmin.setText("Back");
-        BackTAdminAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
-        BackTAdminAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+        BackTAdminFunder.setBackground(new java.awt.Color(53, 66, 74));
+        BackTAdminFunder.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        BackTAdminFunder.setForeground(java.awt.Color.white);
+        BackTAdminFunder.setText("Back");
+        BackTAdminFunder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
+        BackTAdminFunder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BackTAdminAdminMouseClicked(evt);
+                BackTAdminFunderMouseClicked(evt);
             }
         });
 
@@ -107,7 +107,7 @@ public class FunderDelete extends javax.swing.JFrame {
             documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, documentsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BackTAdminAdmin)
+                .addComponent(BackTAdminFunder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 806, Short.MAX_VALUE)
                 .addComponent(closeFunderDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(documentsLayout.createSequentialGroup()
@@ -130,7 +130,7 @@ public class FunderDelete extends javax.swing.JFrame {
             .addGroup(documentsLayout.createSequentialGroup()
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(closeFunderDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BackTAdminAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BackTAdminFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(lblerror_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
@@ -161,10 +161,10 @@ public class FunderDelete extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_closeFunderDeleteMouseClicked
 
-    private void BackTAdminAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminAdminMouseClicked
-        new AdminAdmin().setVisible(true);
+    private void BackTAdminFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminFunderMouseClicked
+        new AdminFunder().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_BackTAdminAdminMouseClicked
+    }//GEN-LAST:event_BackTAdminFunderMouseClicked
 
     private void btndeleteFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteFunderMouseClicked
        
@@ -209,7 +209,7 @@ public class FunderDelete extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BackTAdminAdmin;
+    private javax.swing.JLabel BackTAdminFunder;
     private javax.swing.JButton btndeleteFunder;
     private javax.swing.JLabel closeFunderDelete;
     private javax.swing.JPanel documents;

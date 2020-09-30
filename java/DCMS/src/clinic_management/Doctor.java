@@ -163,7 +163,7 @@ public class Doctor extends javax.swing.JFrame {
         jLabel8.setForeground(java.awt.Color.white);
         jLabel8.setText("New Dentist");
 
-        closeDoctor.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeDoctor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeDoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeDoctorMouseClicked(evt);
@@ -176,7 +176,6 @@ public class Doctor extends javax.swing.JFrame {
         DentisBackToRL.setBackground(new java.awt.Color(53, 66, 74));
         DentisBackToRL.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         DentisBackToRL.setForeground(java.awt.Color.white);
-        DentisBackToRL.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         DentisBackToRL.setText("Back");
         DentisBackToRL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         DentisBackToRL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -196,9 +195,8 @@ public class Doctor extends javax.swing.JFrame {
                         .addComponent(DentisBackToRL)
                         .addGap(251, 251, 251)
                         .addComponent(lblwarning, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(206, 206, 206)
-                        .addComponent(closeDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
+                        .addComponent(closeDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,7 +376,6 @@ public class Doctor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DentisBackToRL;
-    private javax.swing.JLabel DoctorBackToRecptH;
     private javax.swing.JLabel closeDoctor;
     private javax.swing.JLabel goto_login1;
     private javax.swing.JButton jButton1;

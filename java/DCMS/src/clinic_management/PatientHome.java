@@ -67,7 +67,7 @@ public class PatientHome extends javax.swing.JFrame {
             }
         });
 
-        closePatientHome.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closePatientHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closePatientHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closePatientHomeMouseClicked(evt);

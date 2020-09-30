@@ -148,7 +148,7 @@ public class UsernamePassword extends javax.swing.JFrame {
             }
         });
 
-        closeAllUpdates.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeAllUpdates.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeAllUpdates.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeAllUpdatesMouseClicked(evt);
@@ -158,7 +158,6 @@ public class UsernamePassword extends javax.swing.JFrame {
         BackToPatDoc.setBackground(new java.awt.Color(53, 66, 74));
         BackToPatDoc.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         BackToPatDoc.setForeground(java.awt.Color.white);
-        BackToPatDoc.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         BackToPatDoc.setText("Back");
         BackToPatDoc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         BackToPatDoc.addMouseListener(new java.awt.event.MouseAdapter() {

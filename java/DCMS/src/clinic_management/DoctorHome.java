@@ -66,7 +66,7 @@ public class DoctorHome extends javax.swing.JFrame {
             }
         });
 
-        closeDrHome.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeDrHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeDrHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeDrHomeMouseClicked(evt);

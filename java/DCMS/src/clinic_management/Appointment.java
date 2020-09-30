@@ -545,7 +545,7 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(25, 25, 112));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow, 3));
 
-        closeAppointment.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/close.png")); // NOI18N
+        closeAppointment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic_management/close.png"))); // NOI18N
         closeAppointment.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeAppointmentMouseClicked(evt);
@@ -642,7 +642,6 @@ public class Appointment extends javax.swing.JFrame {
         ApointBackToRP.setBackground(new java.awt.Color(53, 66, 74));
         ApointBackToRP.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         ApointBackToRP.setForeground(java.awt.Color.white);
-        ApointBackToRP.setIcon(new javax.swing.ImageIcon("/home/tholithemba/Desktop/github/java/RDPhouses/arrow.png")); // NOI18N
         ApointBackToRP.setText("Back");
         ApointBackToRP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
         ApointBackToRP.addMouseListener(new java.awt.event.MouseAdapter() {

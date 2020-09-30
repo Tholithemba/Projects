@@ -147,6 +147,7 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
         jLabel3 = new javax.swing.JLabel();
         warning_txt = new java.awt.Label();
         jLabel4 = new javax.swing.JLabel();
+        BackTAdminFunder = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -189,12 +190,25 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
         jLabel4.setForeground(java.awt.Color.white);
         jLabel4.setText("Select Field name ");
 
+        BackTAdminFunder.setBackground(new java.awt.Color(53, 66, 74));
+        BackTAdminFunder.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        BackTAdminFunder.setForeground(java.awt.Color.white);
+        BackTAdminFunder.setText("Back");
+        BackTAdminFunder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
+        BackTAdminFunder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackTAdminFunderMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(BackTAdminFunder)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(closeFunderUpdates, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +231,9 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(closeFunderUpdates, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(closeFunderUpdates, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BackTAdminFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(warning_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -279,6 +295,11 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
         clearCells();
     }//GEN-LAST:event_updateFunderMouseClicked
 
+    private void BackTAdminFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminFunderMouseClicked
+        new AdminFunder().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BackTAdminFunderMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -315,6 +336,7 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackTAdminFunder;
     private javax.swing.JLabel closeFunderUpdates;
     private javax.swing.JComboBox<String> fieldToUpdateSelected;
     private javax.swing.JLabel jLabel1;
