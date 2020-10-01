@@ -204,7 +204,6 @@ public class Funder extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        FunderRegistration = new java.awt.Label();
         jPanel3 = new javax.swing.JPanel();
         label16 = new java.awt.Label();
         label17 = new java.awt.Label();
@@ -239,21 +238,13 @@ public class Funder extends javax.swing.JFrame {
         closeFunder = new javax.swing.JLabel();
         FunderBackToAdminHome = new javax.swing.JLabel();
         warning_msg = new java.awt.Label();
+        FunderRegistration = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(53, 66, 74));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 3));
-
-        FunderRegistration.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        FunderRegistration.setForeground(new java.awt.Color(232, 73, 29));
-        FunderRegistration.setText("Register");
-        FunderRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                FunderRegistrationMouseClicked(evt);
-            }
-        });
 
         jPanel3.setBackground(new java.awt.Color(53, 66, 74));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 2));
@@ -505,6 +496,16 @@ public class Funder extends javax.swing.JFrame {
         warning_msg.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         warning_msg.setForeground(java.awt.Color.red);
 
+        FunderRegistration.setBackground(java.awt.Color.blue);
+        FunderRegistration.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        FunderRegistration.setForeground(java.awt.Color.white);
+        FunderRegistration.setText("Register");
+        FunderRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FunderRegistrationMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -516,18 +517,21 @@ public class Funder extends javax.swing.JFrame {
                 .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(307, 307, 307)
                 .addComponent(closeFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FunderRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(warning_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(120, 120, 120))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(82, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(warning_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(FunderRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(231, 231, 231))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -545,8 +549,8 @@ public class Funder extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(warning_msg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FunderRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addComponent(FunderRegistration)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -596,7 +600,6 @@ public class Funder extends javax.swing.JFrame {
         if(valid_input )return;
         
         AddTodatabase();
-        
     }//GEN-LAST:event_FunderRegistrationMouseClicked
 
     /**
@@ -636,7 +639,7 @@ public class Funder extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FunderBackToAdminHome;
-    private java.awt.Label FunderRegistration;
+    private javax.swing.JButton FunderRegistration;
     private java.awt.TextField amount_payed;
     private javax.swing.JLabel closeFunder;
     private java.awt.TextField funder_addr1;

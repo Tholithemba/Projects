@@ -1,8 +1,4 @@
-                /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package rdphouses;
 
 import java.awt.Color;
@@ -23,11 +19,7 @@ import javax.swing.JOptionPane;
  * @author tholithemba
  */
 public class Applicant extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Applicant
-     */
-    
+  
     Registration reg = new Registration();
     Validation v = new Validation();
     GenerateRandomChar grc = new GenerateRandomChar();
@@ -259,7 +251,6 @@ public class Applicant extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        RegisterApplicant = new java.awt.Label();
         jPanel3 = new javax.swing.JPanel();
         label16 = new java.awt.Label();
         label17 = new java.awt.Label();
@@ -303,6 +294,7 @@ public class Applicant extends javax.swing.JFrame {
         ApplicantBackToLogin = new javax.swing.JLabel();
         closeApplicant = new javax.swing.JLabel();
         warning = new java.awt.Label();
+        RegisterApplicant = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -312,15 +304,6 @@ public class Applicant extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 3));
         jPanel1.setForeground(java.awt.Color.white);
         jPanel1.setName("browse"); // NOI18N
-
-        RegisterApplicant.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        RegisterApplicant.setForeground(new java.awt.Color(232, 73, 29));
-        RegisterApplicant.setText("Register");
-        RegisterApplicant.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RegisterApplicantMouseClicked(evt);
-            }
-        });
 
         jPanel3.setBackground(new java.awt.Color(53, 66, 74));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 2));
@@ -686,6 +669,16 @@ public class Applicant extends javax.swing.JFrame {
         warning.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         warning.setForeground(java.awt.Color.red);
 
+        RegisterApplicant.setBackground(java.awt.Color.blue);
+        RegisterApplicant.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        RegisterApplicant.setForeground(java.awt.Color.white);
+        RegisterApplicant.setText("Register");
+        RegisterApplicant.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegisterApplicantMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -697,12 +690,12 @@ public class Applicant extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RegisterApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(warning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(alreadyUserApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(alreadyUserApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegisterApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(42, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -733,8 +726,8 @@ public class Applicant extends javax.swing.JFrame {
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
                         .addComponent(warning, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RegisterApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(RegisterApplicant)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(alreadyUserApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(26, Short.MAX_VALUE))
@@ -805,7 +798,6 @@ public class Applicant extends javax.swing.JFrame {
         addTodatabase();
         
         loginDetails();
-
     }//GEN-LAST:event_RegisterApplicantMouseClicked
 
     /**
@@ -845,7 +837,7 @@ public class Applicant extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ApplicantBackToLogin;
-    private java.awt.Label RegisterApplicant;
+    private javax.swing.JButton RegisterApplicant;
     private java.awt.Label alreadyUserApplicant;
     private com.toedter.calendar.JDateChooser applicant_DOB;
     private java.awt.TextField applicant_IDno;

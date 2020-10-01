@@ -34,8 +34,9 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
                 break;
             case "Lastname": req_field.setFieldName("admin_lastname");
                 break;
-
-            case "Email": req_field.setFieldName("admin_username");
+            case "Email": req_field.setFieldName("admin_email");
+                break;
+            case "Username": req_field.setFieldName("admin_username");
                 break;
             case "Password": req_field.setFieldName("admin_password");
                 break;
@@ -79,6 +80,7 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         
         username_txt.setText("");
         val_tobe_updated.setText("");
+        fieldToUpdateSelected.setSelectedIndex(0);
     }
 
 
@@ -138,10 +140,9 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         username_txt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         warning_txt = new java.awt.Label();
-        updateData = new javax.swing.JLabel();
-        userType = new javax.swing.JComboBox<>();
         val_tobe_updated = new javax.swing.JTextField();
         BackTAdminAdmin = new javax.swing.JLabel();
+        updateData = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -158,7 +159,7 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
             }
         });
 
-        fieldToUpdateSelected.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Firstname", "Lastname", "Email", "Password" }));
+        fieldToUpdateSelected.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Firstname", "Lastname", "Email", "Username", "Password" }));
         fieldToUpdateSelected.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldToUpdateSelectedActionPerformed(evt);
@@ -174,22 +175,11 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         label3.setText("Modify");
 
         jLabel1.setForeground(java.awt.Color.white);
-        jLabel1.setText("Email");
+        jLabel1.setText("Username");
 
         warning_txt.setAlignment(java.awt.Label.CENTER);
         warning_txt.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         warning_txt.setForeground(java.awt.Color.red);
-
-        updateData.setFont(new java.awt.Font("Ubuntu", 1, 28)); // NOI18N
-        updateData.setForeground(java.awt.Color.white);
-        updateData.setText("Update");
-        updateData.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                updateDataMouseClicked(evt);
-            }
-        });
-
-        userType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User type", "Admin", "Applicant", "Funder" }));
 
         BackTAdminAdmin.setBackground(new java.awt.Color(53, 66, 74));
         BackTAdminAdmin.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
@@ -199,6 +189,16 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         BackTAdminAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackTAdminAdminMouseClicked(evt);
+            }
+        });
+
+        updateData.setBackground(java.awt.Color.blue);
+        updateData.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        updateData.setForeground(java.awt.Color.white);
+        updateData.setText("Update");
+        updateData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateDataMouseClicked(evt);
             }
         });
 
@@ -215,27 +215,25 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
                         .addComponent(closeAdminUpdates, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 210, Short.MAX_VALUE)
+                        .addComponent(warning_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(199, 199, 199))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(320, 320, 320)
+                .addComponent(updateData, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(userType, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(username_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)))
-                                        .addGap(2, 2, 2))
-                                    .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(fieldToUpdateSelected, 0, 204, Short.MAX_VALUE)
-                                    .addComponent(val_tobe_updated)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(updateData)
-                                        .addGap(57, 57, 57)))
-                                .addGap(306, 306, 306))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(warning_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(199, 199, 199))))))
+                            .addComponent(jLabel1)
+                            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2))
+                    .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fieldToUpdateSelected, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(val_tobe_updated, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(295, 295, 295))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,9 +243,7 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
                     .addComponent(BackTAdminAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(warning_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,9 +255,9 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(fieldToUpdateSelected, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(64, 64, 64)
                 .addComponent(updateData)
-                .addGap(37, 37, 37))
+                .addGap(46, 46, 46))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -291,8 +287,12 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         selectedField();
     }//GEN-LAST:event_fieldToUpdateSelectedActionPerformed
 
+    private void BackTAdminAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminAdminMouseClicked
+        new AdminAdmin().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BackTAdminAdminMouseClicked
+
     private void updateDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateDataMouseClicked
-       
         warningTextInitialised();
         
         if(!validateInput())return;
@@ -304,11 +304,6 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         
         clearCells(); 
     }//GEN-LAST:event_updateDataMouseClicked
-
-    private void BackTAdminAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminAdminMouseClicked
-        new AdminAdmin().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_BackTAdminAdminMouseClicked
 
     /**
      * @param args the command line arguments
@@ -354,8 +349,7 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
     private javax.swing.JPanel jPanel1;
     private java.awt.Label label2;
     private java.awt.Label label3;
-    private javax.swing.JLabel updateData;
-    private javax.swing.JComboBox<String> userType;
+    private javax.swing.JButton updateData;
     private javax.swing.JTextField username_txt;
     private javax.swing.JTextField val_tobe_updated;
     private java.awt.Label warning_txt;

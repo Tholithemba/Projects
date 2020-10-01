@@ -5,6 +5,8 @@
  */
 package rdphouses;
 
+import java.awt.Color;
+
 /**
  *
  * @author tholithemba
@@ -29,17 +31,42 @@ public class AdminDelete extends javax.swing.JFrame {
         return true;
     }
     
+    private void setValue()
+    {
+        Registration reg = new Registration();
+        reg.setUsername(textAdminUsername.getText());
+    }
+    
     private boolean deleteAdmin()
     {
         Crud crud = new Crud();
         String query = "delete from ADMINISTRATOR where admin_username=?";
+        boolean success = crud.deleteData(query);
         
-        return crud.deleteData(query);
+        if(!success)
+        {
+            error_text.setText("username does not exist");
+            clearText();
+            return success;
+        }
+        
+        return success;
+    }
+    
+    private void clearText()
+    {
+        textAdminUsername.setText("");
+    }
+    
+    private void clearErrorMessage()
+    {
+        error_text.setText("");
     }
     
     private void successMessage()
     {
-       error_text.setText("data deleted successfully....");
+       error_text.setForeground(Color.green);
+        error_text.setText("data deleted successfully....");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -174,9 +201,12 @@ public class AdminDelete extends javax.swing.JFrame {
 
     private void btndeleteAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteAdminMouseClicked
         
+        clearErrorMessage();
         if(!validateInput())return;
+        setValue();
         if(!deleteAdmin())return;
          successMessage();
+         clearText();
     }//GEN-LAST:event_btndeleteAdminMouseClicked
 
     /**

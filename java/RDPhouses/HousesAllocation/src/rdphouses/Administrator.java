@@ -34,21 +34,22 @@ public class Administrator extends javax.swing.JFrame {
         reg.setLastname(admin_lastname.getText());
         reg.setUsername(grc.generateUsername());
         reg.setPassword(grc.generatePassword());
+        reg.setEmail(txtadminEmail.getText());
     }
     
     private boolean validateInput()
     {
-        boolean input_valid = true;
-        String f_name = reg.getFirstname();
-        String l_name = reg.getLastname();
         
-        if(f_name.equals(""))
+        if(reg.getFirstname().equals(""))
             return outputStatement(" firstname");
         
-        if(l_name.equals(""))
+        if(reg.getLastname().equals(""))
             return outputStatement(" lastname");
         
-        return input_valid;
+        if(reg.getEmail().equals(""))
+            return outputStatement(" email address");
+        
+        return true;
     }
     
     private boolean outputStatement(String name)
@@ -63,28 +64,28 @@ public class Administrator extends javax.swing.JFrame {
     {
         String query_statement = "select* from ADMINISTRATOR where admin_email=?";
         boolean exist = v.checkUniqueness(query_statement, reg.getEmail());
-         if(exist)
-            return outputStatement("ed email already exist");
- 
-         return exist;
+        if(exist)
+           return !outputStatement("ed email already exist");
+
+        return exist;
     }
     
     private boolean usernameExist()
     {
         String query_statement = "select* from ADMINISTRATOR where admin_username=?";
         boolean exist = v.checkUniqueness(query_statement, reg.getUsername());
-         if(exist)
-            return outputStatement("ed username already exist");
- 
-         return exist;
+        if(exist)
+           return !outputStatement("ed username already exist");
+
+        return exist;
     }
     
    
-    private void addTodatabase()
+    private void createAdministrator()
     {
         PreparedStatement ps;
-        String query_statement = "INSERT INTO ADMINISTRATOR("
-                + "firstname, lastname, admin_username, admin_email"
+        String query_statement = "INSERT INTO ADMINISTRATOR( admin_firstname, "
+                + " admin_lastname, admin_email, admin_username "
                 + ",admin_password) VALUES (?,?,?,?,?)";
         
         try
@@ -93,8 +94,9 @@ public class Administrator extends javax.swing.JFrame {
             
             ps.setString(1, reg.getFirstname());
             ps.setString(2, reg.getLastname());
-            ps.setString(3, reg.getUsername());
-            ps.setString(4, reg.getPassword());
+            ps.setString(3, reg.getEmail());
+            ps.setString(4, reg.getUsername());
+            ps.setString(5, reg.getPassword());
             
             if(ps.executeUpdate() > 0)
             {
@@ -111,13 +113,14 @@ public class Administrator extends javax.swing.JFrame {
     
     private void loginDetails(){
         JOptionPane.showMessageDialog(null, "username: "+reg.getUsername()+
-                " "+"passord: "+reg.getPassword());
+                " \n passord: "+reg.getPassword());
     }
     
     private void clearCells()
     {
         admin_firstname.setText("");
         admin_lastname.setText("");
+        txtadminEmail.setText("");
     }  
 
     /**
@@ -132,13 +135,15 @@ public class Administrator extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         label1 = new java.awt.Label();
         lblname = new java.awt.Label();
-        admin_firstname = new java.awt.TextField();
-        AdminRegistration = new java.awt.Label();
         label3 = new java.awt.Label();
         AdminBackToLogin = new javax.swing.JLabel();
         closeAdmin = new javax.swing.JLabel();
-        admin_lastname = new java.awt.TextField();
         confirmation = new java.awt.Label();
+        AdminRegistration = new javax.swing.JButton();
+        admin_firstname = new javax.swing.JTextField();
+        admin_lastname = new javax.swing.JTextField();
+        txtadminEmail = new javax.swing.JTextField();
+        label2 = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -155,15 +160,6 @@ public class Administrator extends javax.swing.JFrame {
         lblname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         lblname.setForeground(java.awt.Color.white);
         lblname.setText("Firstname");
-
-        AdminRegistration.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        AdminRegistration.setForeground(new java.awt.Color(232, 73, 29));
-        AdminRegistration.setText("Register");
-        AdminRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AdminRegistrationMouseClicked(evt);
-            }
-        });
 
         label3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         label3.setForeground(java.awt.Color.white);
@@ -187,7 +183,24 @@ public class Administrator extends javax.swing.JFrame {
             }
         });
 
+        confirmation.setAlignment(java.awt.Label.CENTER);
+        confirmation.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         confirmation.setForeground(java.awt.Color.green);
+
+        AdminRegistration.setBackground(java.awt.Color.blue);
+        AdminRegistration.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        AdminRegistration.setForeground(java.awt.Color.white);
+        AdminRegistration.setText("Register");
+        AdminRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AdminRegistrationMouseClicked(evt);
+            }
+        });
+
+        label2.setBackground(new java.awt.Color(53, 66, 74));
+        label2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        label2.setForeground(java.awt.Color.white);
+        label2.setText("Email");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -201,49 +214,51 @@ public class Administrator extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(closeAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 224, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(21, 21, 21)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(admin_firstname, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                                        .addComponent(admin_lastname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(confirmation, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(94, 94, 94))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(257, 257, 257))))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(283, 283, 283)
-                .addComponent(AdminRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(257, 257, 257))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(AdminRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(admin_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtadminEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(admin_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(306, 306, 306))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(208, Short.MAX_VALUE)
+                .addComponent(confirmation, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(195, 195, 195))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AdminBackToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(admin_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(admin_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(confirmation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(AdminRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
+                .addGap(19, 19, 19)
+                .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(admin_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(admin_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtadminEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(AdminRegistration)
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -271,14 +286,13 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminBackToLoginMouseClicked
 
     private void AdminRegistrationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminRegistrationMouseClicked
-         setValues();
         
-        boolean input_valid = validateInput();
-        if(!input_valid)return;
-        if(!emailExist())return;
-        if(!usernameExist())return;
-        addTodatabase();
+        setValues();
         
+        if(!validateInput())return;
+        if(emailExist())return;
+        if(usernameExist())return;
+        createAdministrator();
         loginDetails();
     }//GEN-LAST:event_AdminRegistrationMouseClicked
 
@@ -320,14 +334,16 @@ public class Administrator extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AdminBackToLogin;
-    private java.awt.Label AdminRegistration;
-    private java.awt.TextField admin_firstname;
-    private java.awt.TextField admin_lastname;
+    private javax.swing.JButton AdminRegistration;
+    private javax.swing.JTextField admin_firstname;
+    private javax.swing.JTextField admin_lastname;
     private javax.swing.JLabel closeAdmin;
     private java.awt.Label confirmation;
     private javax.swing.JPanel jPanel1;
     private java.awt.Label label1;
+    private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label lblname;
+    private javax.swing.JTextField txtadminEmail;
     // End of variables declaration//GEN-END:variables
 }

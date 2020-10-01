@@ -65,29 +65,18 @@
                   <Component id="label4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="280" max="-2" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
-                          <Component id="label2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="1" max="-2" attributes="0"/>
-                                  <Component id="label1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtfallocation_amount" min="-2" pref="152" max="-2" attributes="0"/>
-                              <Component id="organiz_name" min="-2" pref="152" max="-2" attributes="0"/>
-                          </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="297" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="btnAllocate" min="-2" pref="163" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Component id="label3" min="-2" max="-2" attributes="0"/>
+                          <Component id="organiz_name" min="-2" pref="152" max="-2" attributes="0"/>
+                          <Component id="txtfallocation_amount" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
+                          <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="196" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="262" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -100,19 +89,17 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="label4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="89" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtfallocation_amount" max="32767" attributes="0"/>
-                      <Component id="label1" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="label3" min="-2" max="-2" attributes="0"/>
-                      <Component id="organiz_name" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                  <Component id="label2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                  <Component id="label1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="txtfallocation_amount" min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="label3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="organiz_name" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                  <Component id="btnAllocate" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -133,17 +120,6 @@
           </Properties>
         </Component>
         <Component class="java.awt.TextField" name="txtfallocation_amount">
-        </Component>
-        <Component class="java.awt.Label" name="label2">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="24" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="1d" green="49" red="e8" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Allocate"/>
-          </Properties>
         </Component>
         <Component class="java.awt.Label" name="label3">
           <Properties>
@@ -204,6 +180,23 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="closeAllocationMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAllocate">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Allocate"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAllocateMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

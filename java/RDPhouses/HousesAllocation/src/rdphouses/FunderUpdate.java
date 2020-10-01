@@ -143,11 +143,11 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
         val_tobe_updated = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         username_txt = new javax.swing.JTextField();
-        updateFunder = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         warning_txt = new java.awt.Label();
         jLabel4 = new javax.swing.JLabel();
         BackTAdminFunder = new javax.swing.JLabel();
+        updateFunder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -169,24 +169,18 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel1.setForeground(java.awt.Color.white);
         jLabel1.setText("Modify");
 
-        updateFunder.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        updateFunder.setForeground(new java.awt.Color(232, 73, 29));
-        updateFunder.setText("Update");
-        updateFunder.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                updateFunderMouseClicked(evt);
-            }
-        });
-
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setText("Email");
 
         warning_txt.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         warning_txt.setForeground(java.awt.Color.red);
 
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
         jLabel4.setText("Select Field name ");
 
@@ -198,6 +192,16 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
         BackTAdminFunder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackTAdminFunderMouseClicked(evt);
+            }
+        });
+
+        updateFunder.setBackground(java.awt.Color.blue);
+        updateFunder.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        updateFunder.setForeground(java.awt.Color.white);
+        updateFunder.setText("Update");
+        updateFunder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateFunderMouseClicked(evt);
             }
         });
 
@@ -213,9 +217,6 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(343, 343, 343)
-                        .addComponent(updateFunder))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(308, 308, 308)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -225,7 +226,10 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
                                 .addComponent(username_txt))
                             .addComponent(jLabel3)
                             .addComponent(warning_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))))
+                            .addComponent(jLabel4)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(330, 330, 330)
+                        .addComponent(updateFunder, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -248,9 +252,9 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldToUpdateSelected, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(48, 48, 48)
                 .addComponent(updateFunder)
-                .addGap(80, 80, 80))
+                .addGap(77, 77, 77))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -281,6 +285,11 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
         selectedField();
     }//GEN-LAST:event_fieldToUpdateSelectedActionPerformed
 
+    private void BackTAdminFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminFunderMouseClicked
+        new AdminFunder().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BackTAdminFunderMouseClicked
+
     private void updateFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateFunderMouseClicked
         
         warningTextInitialised();
@@ -294,11 +303,6 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
         
         clearCells();
     }//GEN-LAST:event_updateFunderMouseClicked
-
-    private void BackTAdminFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminFunderMouseClicked
-        new AdminFunder().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_BackTAdminFunderMouseClicked
 
     /**
      * @param args the command line arguments
@@ -343,7 +347,7 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel updateFunder;
+    private javax.swing.JButton updateFunder;
     private javax.swing.JTextField username_txt;
     private javax.swing.JTextField val_tobe_updated;
     private java.awt.Label warning_txt;

@@ -78,37 +78,32 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="210" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="label3" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="userType" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="username_txt" alignment="0" pref="202" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="label2" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="fieldToUpdateSelected" alignment="0" pref="204" max="32767" attributes="0"/>
-                                      <Component id="val_tobe_updated" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="updateData" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="warning_txt" min="-2" pref="378" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="warning_txt" min="-2" pref="378" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="320" max="-2" attributes="0"/>
+                  <Component id="updateData" min="-2" pref="161" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="label3" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
+                              <Component id="username_txt" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="label2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="fieldToUpdateSelected" alignment="0" max="32767" attributes="0"/>
+                      <Component id="val_tobe_updated" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -121,9 +116,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="warning_txt" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="userType" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="username_txt" min="-2" max="-2" attributes="0"/>
@@ -135,9 +128,9 @@
                   <Component id="label2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="fieldToUpdateSelected" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   <Component id="updateData" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -156,12 +149,13 @@
         <Component class="javax.swing.JComboBox" name="fieldToUpdateSelected">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="6">
                 <StringItem index="0" value="Select"/>
                 <StringItem index="1" value="Firstname"/>
                 <StringItem index="2" value="Lastname"/>
                 <StringItem index="3" value="Email"/>
-                <StringItem index="4" value="Password"/>
+                <StringItem index="4" value="Username"/>
+                <StringItem index="5" value="Password"/>
               </StringArray>
             </Property>
           </Properties>
@@ -201,7 +195,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Email"/>
+            <Property name="text" type="java.lang.String" value="Username"/>
           </Properties>
         </Component>
         <Component class="java.awt.Label" name="warning_txt">
@@ -214,35 +208,6 @@
               <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
             </Property>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="updateData">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu" size="28" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Update"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updateDataMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="userType">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="User type"/>
-                <StringItem index="1" value="Admin"/>
-                <StringItem index="2" value="Applicant"/>
-                <StringItem index="3" value="Funder"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="val_tobe_updated">
         </Component>
@@ -268,6 +233,23 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackTAdminAdminMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="updateData">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Update"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updateDataMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

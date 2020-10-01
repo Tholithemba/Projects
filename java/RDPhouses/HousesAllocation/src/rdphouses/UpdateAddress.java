@@ -37,8 +37,8 @@ public class UpdateAddress extends javax.swing.JFrame {
         UpdBuilding = new java.awt.TextField();
         UpdpCode = new java.awt.TextField();
         label13 = new java.awt.Label();
-        updateAddress = new javax.swing.JLabel();
         closeAddress = new javax.swing.JLabel();
+        btnupdateAddress = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -70,10 +70,6 @@ public class UpdateAddress extends javax.swing.JFrame {
         label13.setForeground(java.awt.Color.white);
         label13.setText("Address");
 
-        updateAddress.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        updateAddress.setForeground(new java.awt.Color(232, 73, 29));
-        updateAddress.setText("Update");
-
         closeAddress.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rdphouses/close.png"))); // NOI18N
         closeAddress.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -81,14 +77,20 @@ public class UpdateAddress extends javax.swing.JFrame {
             }
         });
 
+        btnupdateAddress.setBackground(java.awt.Color.blue);
+        btnupdateAddress.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        btnupdateAddress.setForeground(java.awt.Color.white);
+        btnupdateAddress.setText("Update");
+        btnupdateAddress.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnupdateAddressMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(341, 341, 341)
-                .addComponent(label13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(285, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,8 +109,12 @@ public class UpdateAddress extends javax.swing.JFrame {
                             .addComponent(UpdpCode, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(274, 274, 274))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(updateAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(368, 368, 368))))
+                        .addComponent(btnupdateAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(288, 288, 288))))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(341, 341, 341)
+                .addComponent(label13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,8 +141,8 @@ public class UpdateAddress extends javax.swing.JFrame {
                     .addComponent(label19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UpdpCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66)
-                .addComponent(updateAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addComponent(btnupdateAddress)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,7 +157,7 @@ public class UpdateAddress extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
+            .addGap(0, 454, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,6 +171,10 @@ public class UpdateAddress extends javax.swing.JFrame {
     private void closeAddressMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeAddressMouseClicked
         System.exit(0);
     }//GEN-LAST:event_closeAddressMouseClicked
+
+    private void btnupdateAddressMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnupdateAddressMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnupdateAddressMouseClicked
 
     /**
      * @param args the command line arguments
@@ -204,6 +214,7 @@ public class UpdateAddress extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.TextField UpdBuilding;
     private java.awt.TextField UpdpCode;
+    private javax.swing.JButton btnupdateAddress;
     private javax.swing.JLabel closeAddress;
     private javax.swing.JPanel jPanel3;
     private java.awt.Label label13;
@@ -213,6 +224,5 @@ public class UpdateAddress extends javax.swing.JFrame {
     private java.awt.Label label19;
     private java.awt.TextField updCity;
     private java.awt.TextField updStreetAddr;
-    private javax.swing.JLabel updateAddress;
     // End of variables declaration//GEN-END:variables
 }

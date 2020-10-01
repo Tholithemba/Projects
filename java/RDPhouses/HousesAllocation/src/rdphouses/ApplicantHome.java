@@ -136,15 +136,15 @@ public class ApplicantHome extends javax.swing.JFrame {
             .addGroup(documentsLayout.createSequentialGroup()
                 .addGap(329, 329, 329)
                 .addComponent(warning_message, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 210, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, documentsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(409, Short.MAX_VALUE)
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(updateApplica)
                     .addComponent(viewStatus)
                     .addComponent(updatePassword)
                     .addComponent(witdrawApplication))
-                .addGap(252, 252, 252))
+                .addGap(338, 338, 338))
         );
         documentsLayout.setVerticalGroup(
             documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +152,7 @@ public class ApplicantHome extends javax.swing.JFrame {
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(UpdateApplBackTAdminHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(closeUpdateApllicant, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
+                .addGap(81, 81, 81)
                 .addComponent(viewStatus)
                 .addGap(18, 18, 18)
                 .addComponent(updateApplica)
@@ -160,7 +160,7 @@ public class ApplicantHome extends javax.swing.JFrame {
                 .addComponent(witdrawApplication)
                 .addGap(18, 18, 18)
                 .addComponent(updatePassword)
-                .addGap(326, 326, 326)
+                .addGap(319, 319, 319)
                 .addComponent(warning_message, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -169,9 +169,7 @@ public class ApplicantHome extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(documents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(documents, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

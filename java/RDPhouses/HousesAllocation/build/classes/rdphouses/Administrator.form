@@ -60,64 +60,61 @@
                           <Component id="closeAdmin" min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="224" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="label1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblname" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="admin_firstname" pref="152" max="32767" attributes="0"/>
-                                          <Component id="admin_lastname" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="confirmation" min="-2" pref="283" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="label3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="AdminRegistration" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="lblname" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="admin_lastname" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="label2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtadminEmail" min="-2" pref="209" max="-2" attributes="0"/>
+                                      <Component id="admin_firstname" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
-                  <Component id="AdminRegistration" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="208" max="32767" attributes="0"/>
+                  <Component id="confirmation" min="-2" pref="460" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="closeAdmin" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="AdminBackToLogin" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="label3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblname" min="-2" max="-2" attributes="0"/>
-                              <Component id="admin_firstname" min="-2" pref="27" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="label1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="admin_lastname" min="-2" pref="27" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <Component id="label3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
                   <Component id="confirmation" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="lblname" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="admin_firstname" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="label1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="admin_lastname" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="label2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="txtadminEmail" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="AdminRegistration" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -150,22 +147,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Firstname"/>
           </Properties>
-        </Component>
-        <Component class="java.awt.TextField" name="admin_firstname">
-        </Component>
-        <Component class="java.awt.Label" name="AdminRegistration">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="24" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="1d" green="49" red="e8" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Register"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AdminRegistrationMouseClicked"/>
-          </Events>
         </Component>
         <Component class="java.awt.Label" name="label3">
           <Properties>
@@ -212,13 +193,52 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="closeAdminMouseClicked"/>
           </Events>
         </Component>
-        <Component class="java.awt.TextField" name="admin_lastname">
-        </Component>
         <Component class="java.awt.Label" name="confirmation">
           <Properties>
+            <Property name="alignment" type="int" value="1"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="0"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="ff" id="green" palette="1" red="0" type="palette"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="AdminRegistration">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Register"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AdminRegistrationMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="admin_firstname">
+        </Component>
+        <Component class="javax.swing.JTextField" name="admin_lastname">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtadminEmail">
+        </Component>
+        <Component class="java.awt.Label" name="label2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4a" green="42" red="35" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
       </SubComponents>

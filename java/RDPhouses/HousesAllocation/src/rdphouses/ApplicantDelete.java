@@ -5,6 +5,8 @@
  */
 package rdphouses;
 
+import java.awt.Color;
+
 /**
  *
  * @author tholithemba
@@ -29,17 +31,41 @@ public class ApplicantDelete extends javax.swing.JFrame {
         return true;
     }
     
+    private void setValue()
+    {
+        Registration reg = new Registration();
+        reg.setUsername(txtApplicantUsername.getText());
+    }
+    
     private boolean deleteApplicant()
     {
         Crud crud = new Crud();
         String query = "delete from APPLICANT where applicant_username=?";
+        boolean success = crud.deleteData(query);
         
-        return crud.deleteData(query);
+        if(!success)
+        {
+            lblerror_text.setText("Applicant userna does not exist");
+            clearText();
+            return success;
+        }
+        
+        return success;
+    }
+    private void clearText()
+    {
+        txtApplicantUsername.setText("");
+    }
+    
+    private void clearErrorMessage()
+    {
+        lblerror_text.setText("");
     }
     
     private void successMessage()
     {
-       lblerror_text.setText("data deleted successfully....");
+        lblerror_text.setForeground(Color.green);
+        lblerror_text.setText("data deleted successfully....");
     }
 
     /**
@@ -167,9 +193,12 @@ public class ApplicantDelete extends javax.swing.JFrame {
 
     private void btndeleteApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteApplicantMouseClicked
         
+        clearErrorMessage();
         if(!validateInput())return;
+        setValue();
         if(!deleteApplicant())return;
         successMessage();
+        clearText();
     }//GEN-LAST:event_btndeleteApplicantMouseClicked
 
     /**

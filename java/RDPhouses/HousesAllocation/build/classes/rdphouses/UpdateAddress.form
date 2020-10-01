@@ -35,7 +35,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="440" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="454" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
@@ -63,11 +63,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="341" max="-2" attributes="0"/>
-                  <Component id="label13" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="285" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -89,10 +84,15 @@
                           <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="updateAddress" min="-2" pref="73" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="368" max="-2" attributes="0"/>
+                          <Component id="btnupdateAddress" min="-2" pref="174" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="288" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="341" max="-2" attributes="0"/>
+                  <Component id="label13" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -126,8 +126,8 @@
                       <Component id="UpdpCode" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                  <Component id="updateAddress" min="-2" pref="25" max="-2" attributes="0"/>
-                  <EmptySpace pref="82" max="32767" attributes="0"/>
+                  <Component id="btnupdateAddress" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="81" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -208,17 +208,6 @@
             <Property name="text" type="java.lang.String" value="Address"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="updateAddress">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="1d" green="49" red="e8" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Update"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="closeAddress">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -227,6 +216,23 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="closeAddressMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnupdateAddress">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Update"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnupdateAddressMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

@@ -159,8 +159,8 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
         val_tobe_updated = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         fieldToUpdateSelected = new javax.swing.JComboBox<>();
-        updateApplicant = new javax.swing.JLabel();
         BackTAdminApplicant = new javax.swing.JLabel();
+        updateApplicant = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -175,6 +175,7 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
             }
         });
 
+        warning_txt.setAlignment(java.awt.Label.CENTER);
         warning_txt.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         warning_txt.setForeground(java.awt.Color.red);
 
@@ -199,16 +200,6 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
             }
         });
 
-        updateApplicant.setBackground(new java.awt.Color(53, 66, 74));
-        updateApplicant.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        updateApplicant.setForeground(new java.awt.Color(232, 73, 29));
-        updateApplicant.setText("Update");
-        updateApplicant.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                updateApplicantMouseClicked(evt);
-            }
-        });
-
         BackTAdminApplicant.setBackground(new java.awt.Color(53, 66, 74));
         BackTAdminApplicant.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         BackTAdminApplicant.setForeground(java.awt.Color.white);
@@ -220,33 +211,46 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
             }
         });
 
+        updateApplicant.setBackground(java.awt.Color.blue);
+        updateApplicant.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        updateApplicant.setForeground(java.awt.Color.white);
+        updateApplicant.setText("Update");
+        updateApplicant.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateApplicantMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(closeApplicantUpdates, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(closeApplicantUpdates, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(updateApplicant, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(375, 375, 375))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(333, 333, 333)
+                        .addContainerGap()
+                        .addComponent(BackTAdminApplicant))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(warning_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(361, 361, 361)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addComponent(warning_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(fieldToUpdateSelected, javax.swing.GroupLayout.Alignment.LEADING, 0, 216, Short.MAX_VALUE)
+                                .addComponent(fieldToUpdateSelected, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
                                 .addComponent(val_tobe_updated, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(username_txt, javax.swing.GroupLayout.Alignment.LEADING))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(380, 380, 380)
-                        .addComponent(updateApplicant))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BackTAdminApplicant)))
-                .addContainerGap(82, Short.MAX_VALUE))
+                                .addComponent(username_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,16 +274,16 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldToUpdateSelected, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(42, 42, 42)
                 .addComponent(updateApplicant)
-                .addGap(0, 43, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,6 +307,10 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
         selectedField();
     }//GEN-LAST:event_fieldToUpdateSelectedActionPerformed
 
+    private void BackTAdminApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminApplicantMouseClicked
+        backTo();
+    }//GEN-LAST:event_BackTAdminApplicantMouseClicked
+
     private void updateApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateApplicantMouseClicked
         
         warningTextInitialised();
@@ -316,10 +324,6 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
         
         clearCells();
     }//GEN-LAST:event_updateApplicantMouseClicked
-
-    private void BackTAdminApplicantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTAdminApplicantMouseClicked
-        backTo();
-    }//GEN-LAST:event_BackTAdminApplicantMouseClicked
 
     /**
      * @param args the command line arguments
@@ -364,7 +368,7 @@ public class ApplicantUpdates extends javax.swing.JFrame implements IUpdates {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel updateApplicant;
+    private javax.swing.JButton updateApplicant;
     private javax.swing.JTextField username_txt;
     private javax.swing.JTextField val_tobe_updated;
     private java.awt.Label warning_txt;
