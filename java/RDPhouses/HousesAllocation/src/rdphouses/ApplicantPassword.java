@@ -5,6 +5,8 @@
  */
 package rdphouses;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author tholithemba
@@ -21,7 +23,6 @@ public class ApplicantPassword extends javax.swing.JFrame {
     //validate input from the user
     private boolean validInput()
     {
-        GenerateRandomChar grc = new GenerateRandomChar();
         String orig_password = String.valueOf(jpfpasswordorig.getPassword());
         String retyped_password = String.valueOf(jpfpasswordver.getPassword());
         if(jpfpasswordorig.getPassword().length != 10)
@@ -37,11 +38,20 @@ public class ApplicantPassword extends javax.swing.JFrame {
             clearCells();
             return false;           
         }
-        //udf.setFieldData(grc.passwordEncryption(orig_password));
         
         return true;
     }
     //end of validInput() method
+    
+    
+    private void setValues()
+    {
+        Registration reg = new Registration();
+        GenerateRandomChar grc = new GenerateRandomChar();
+        String orig_password = String.valueOf(jpfpasswordorig.getPassword());
+        reg.setPassword(grc.passwordEncryption(orig_password));
+        
+    }
     
     //clear error message
     private void clearErrorText()
@@ -63,9 +73,24 @@ public class ApplicantPassword extends javax.swing.JFrame {
         String query = "update APPLICANT set applicant_password=? where "
                 + "applicant_username=?";
         
-        return crud.updateData(query);
+        boolean success = crud.updateData(query);
+        
+        if(!success)
+        {
+            lblerror_text.setText("incorrect username");
+            return success;
+        }
+        
+        return success;
     }
    
+    private void successMessage()
+    {
+        GenerateRandomChar grc = new GenerateRandomChar();
+        JOptionPane.showMessageDialog(null, "Password was updated successfull \n"
+                + "your new password:  "+grc.getPswrdTobeSent());
+    }
+    
     
     //back to doctor home page if doctor is active
     //otherwise back to patient home page
@@ -212,8 +237,9 @@ public class ApplicantPassword extends javax.swing.JFrame {
         
         clearErrorText();
         if(!validInput())return;
+        setValues();
         if(!updatePassword())return;
-        
+        successMessage();
         clearCells();
     }//GEN-LAST:event_btnUpdatePasswordMouseClicked
 

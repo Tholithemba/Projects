@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package rdphouses;
+
+
 /**
  *
  * @author tholithemba
@@ -11,7 +13,7 @@ package rdphouses;
 public class Login extends javax.swing.JFrame {
 
     Registration reg = new Registration();
-    Validation v = new Validation();
+    
     private static boolean admin_ctive;
     private static boolean applicant_active;
     /**
@@ -23,9 +25,9 @@ public class Login extends javax.swing.JFrame {
         applicant_active = false;
     }
     
-    public void setadminActive()
+    public void setadminActive(boolean active)
     {
-        admin_ctive  = true;
+        admin_ctive  = active;
     }
     
     public boolean getadminActive()
@@ -33,9 +35,9 @@ public class Login extends javax.swing.JFrame {
         return admin_ctive;
     }
     
-    public void setapplicantActive()
+    public void setapplicantActive(boolean active)
     {
-        applicant_active  = true;
+        applicant_active  = active;
     }
     
     public boolean getapplicantActive()
@@ -43,34 +45,34 @@ public class Login extends javax.swing.JFrame {
         return applicant_active;
     }
  
-    public boolean validateInput(){
-        String username = reg.getUsername();
-        String password = reg.getPassword();
-        boolean all_valid = true;
+    public boolean validateInput()
+    {
+        if(reg.getUsername().equals(""))
+            return outputStatement("enter username");
         
-        if(username.equals("")){
-            all_valid = false;
-            outputStatement("enter username");
-        }
-        else if(password.equals("")){
-            all_valid = false;
-            outputStatement("enter password");
-        }
+        else if(reg.getPassword().equals(""))
+            return outputStatement("enter password");
         
-        return all_valid;
+        return true;
     }
     
     private boolean loggingUser()
     {
         String query_statement;
-        if(login_admin_applicant.getSelectedItem().equals("Admin")){
+        RequiredFields rf = new RequiredFields();
+        
+        if(login_admin_applicant.getSelectedItem().equals("Admin"))
+        {
+            rf.setFieldName("admin_password");
             query_statement = "select* from ADMINISTRATOR where "
-                    + "admin_username=? and admin_password=?";
+                    + "admin_username=?";
             return usernamePasswordExist(query_statement);
         }
-        else{
+        else
+        {
+            rf.setFieldName("applicant_password");
             query_statement = "select* from APPLICANT where "
-                    + "applicant_username=? and applicant_password=?";
+                    + "applicant_username=?";
             return usernamePasswordExist(query_statement);
         }       
     }
@@ -80,13 +82,16 @@ public class Login extends javax.swing.JFrame {
         reg.setPassword(String.valueOf(login_password.getPassword()));
     }
     
-    private boolean usernamePasswordExist(String query_statement){ 
+    private boolean usernamePasswordExist(String query_statement)
+    { 
+        Validation v = new Validation();
         return v.EmailPasswordVerification(query_statement);
     }
     
-    private void outputStatement(String name){
+    private boolean outputStatement(String name){
         login_warning.setText(name);
         clearCells();
+        return false;
     }
     
     private void clearCells()
@@ -97,11 +102,16 @@ public class Login extends javax.swing.JFrame {
     
     private void userLoggedIn()
     {
-        if(login_admin_applicant.getSelectedItem().equals("Admin")){
+        if(login_admin_applicant.getSelectedItem().equals("Admin"))
+        {
+            setadminActive(true);
             new AdminHome().setVisible(true);
             this.setVisible(false);
-        }else{
-            new CheckStatus().setVisible(true);
+        }
+        else
+        {
+            setapplicantActive(true);
+            new ApplicantHome().setVisible(true);
             this.setVisible(false);
         }        
     }

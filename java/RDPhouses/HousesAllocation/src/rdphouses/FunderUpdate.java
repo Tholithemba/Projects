@@ -97,8 +97,8 @@ public class FunderUpdate extends javax.swing.JFrame implements IUpdates {
     public void selectedField(){
         
         String query = setValues();
-        
-        String fied_data = req_field.getDataTobeUpdated(query);
+        req_field.getDataTobeUpdated(query);
+        String fied_data = req_field.getFieldData();
         
         if(fied_data != null){
             val_tobe_updated.setText(fied_data);

@@ -8,6 +8,7 @@ package rdphouses;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,8 +16,6 @@ import java.sql.SQLException;
  */
 public class Validation {
 
-    Registration reg = new Registration();
-    
     public boolean checkUniqueness(String query_statement, String check_value)
     {
         boolean exist = false;
@@ -41,24 +40,40 @@ public class Validation {
     
     public boolean EmailPasswordVerification(String query_statement)
     {
-        boolean exist = false;
         PreparedStatement ps;
         ResultSet rs;
+        Registration reg = new Registration();
+        RequiredFields rf = new RequiredFields();
+        GenerateRandomChar grc = new GenerateRandomChar();
         
         try{
             ps = Connect2database.getConnection().prepareStatement(query_statement);
             
             ps.setString(1, reg.getUsername());
-            ps.setString(2, reg.getPassword());
             rs = ps.executeQuery();
             
-            if(rs.next())return true;
+            if(rs.next())
+            {
+                String password = grc.passwordDecryption(rs.getString(rf.getFieldName()));
+                grc.setPswrdTobeSent(password);
+            }
         }
         catch (SQLException ex)
         {
-            ex.getSQLState();
+            JOptionPane.showMessageDialog(null, "error occured please contact the administrator");
         }
         
-        return exist;
+        return comparePassword();
+    }
+    
+    private boolean comparePassword()
+    {
+        Registration reg = new Registration();
+        GenerateRandomChar grc = new GenerateRandomChar();
+        
+        if(reg.getPassword().equals(grc.getPswrdTobeSent()))
+            return true;
+        else
+            return false;
     }
 }

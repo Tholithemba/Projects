@@ -67,6 +67,21 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         return input_valid;
     }
     
+    private boolean passwordEnryption()
+    {
+        GenerateRandomChar grc = new GenerateRandomChar();
+        String updated_password = val_tobe_updated.getText();
+        if(updated_password.length() != 10)
+            return outputStatement("password length must be of 10 charectors");
+        else
+        {
+            String encrypt = grc.passwordEncryption(updated_password);
+            req_field.setFieldData(encrypt);
+            return true;
+        }
+
+    }
+    
     @Override
     public boolean outputStatement(String message){
         
@@ -80,7 +95,6 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         
         username_txt.setText("");
         val_tobe_updated.setText("");
-        fieldToUpdateSelected.setSelectedIndex(0);
     }
 
 
@@ -93,10 +107,11 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
     public void selectedField(){
         
         String query = setValues();
+        req_field.getDataTobeUpdated(query);
+        String fied_data = req_field.getFieldData();
         
-        String fied_data = req_field.getDataTobeUpdated(query);
-        
-        if(fied_data != null){
+        if(fied_data != null)
+        {
             val_tobe_updated.setText(fied_data);
         }else{
             warning_txt.setText("username does not exist");
@@ -300,6 +315,10 @@ public class AdminUpdates extends javax.swing.JFrame implements IUpdates {
         if(!modifiedTextFieldNotEmpty())return;
         
         req_field.setFieldData(val_tobe_updated.getText());
+        
+        if(fieldToUpdateSelected.getSelectedItem().equals("Password"))
+            if(!passwordEnryption())return;
+        
         req_field.addUpdatedData(queryStatement());
         
         clearCells(); 

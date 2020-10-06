@@ -21,27 +21,6 @@ public class ApplicantHome extends javax.swing.JFrame {
     public ApplicantHome() {
         initComponents();
     }
-    
-    /*private void updateTdatabase(String updatedValue)
-    {
-        PreparedStatement ps;
-        String query_statement = "update APPLICANT set "+column_tobe_updated+"=? where applicant_username=?";   
-        
-        try {
-            ps = Connect2database.getConnection().prepareStatement(query_statement);
-            ps.setString(1, updatedValue);
-            ps.setString(2,reg.getUsername());
-            
-            if(ps.executeUpdate()>0)
-            {
-                warning_message.setForeground(Color.green);
-                warning_message.setText("data updated successfully....");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(UpdateApplicant.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    */
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -135,16 +114,14 @@ public class ApplicantHome extends javax.swing.JFrame {
                 .addComponent(closeUpdateApllicant, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(documentsLayout.createSequentialGroup()
                 .addGap(329, 329, 329)
-                .addComponent(warning_message, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, documentsLayout.createSequentialGroup()
-                .addContainerGap(409, Short.MAX_VALUE)
-                .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(updateApplica)
-                    .addComponent(viewStatus)
-                    .addComponent(updatePassword)
-                    .addComponent(witdrawApplication))
-                .addGap(338, 338, 338))
+                .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(updateApplica)
+                        .addComponent(viewStatus)
+                        .addComponent(updatePassword)
+                        .addComponent(witdrawApplication))
+                    .addComponent(warning_message, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 274, Short.MAX_VALUE))
         );
         documentsLayout.setVerticalGroup(
             documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +129,7 @@ public class ApplicantHome extends javax.swing.JFrame {
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(UpdateApplBackTAdminHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(closeUpdateApllicant, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81)
+                .addGap(67, 67, 67)
                 .addComponent(viewStatus)
                 .addGap(18, 18, 18)
                 .addComponent(updateApplica)
@@ -160,7 +137,7 @@ public class ApplicantHome extends javax.swing.JFrame {
                 .addComponent(witdrawApplication)
                 .addGap(18, 18, 18)
                 .addComponent(updatePassword)
-                .addGap(319, 319, 319)
+                .addGap(333, 333, 333)
                 .addComponent(warning_message, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -202,8 +179,8 @@ public class ApplicantHome extends javax.swing.JFrame {
     }//GEN-LAST:event_updateApplicaMouseClicked
 
     private void witdrawApplicationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_witdrawApplicationMouseClicked
-       
-        JOptionPane.showConfirmDialog(null, "Are you sure you want to withdraw your application?");
+        new ApplicantDelete().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_witdrawApplicationMouseClicked
 
     private void updatePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updatePasswordMouseClicked

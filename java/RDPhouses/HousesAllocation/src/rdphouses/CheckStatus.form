@@ -19,113 +19,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="label3app1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="textField1" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
-                              <Component id="label10" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Component id="label3app" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ApplicationBackToAdmin" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="59" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="0" pref="124" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <Component id="ApplicationBackToAdmin" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Component id="label3app1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="label10" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="textField1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="label3app" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
-      <SubComponents>
-        <Component class="java.awt.Label" name="label10">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="4a" green="42" red="35" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Application Amount"/>
-          </Properties>
-        </Component>
-        <Component class="java.awt.Label" name="label3app">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="1d" green="49" red="e8" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Apply"/>
-          </Properties>
-        </Component>
-        <Component class="java.awt.TextField" name="textField1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
-          </Properties>
-        </Component>
-        <Component class="java.awt.Label" name="label3app1">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="24" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Application"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="ApplicationBackToAdmin">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="4a" green="42" red="35" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu" size="15" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Back"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="0">
-                  <Color PropertyName="color" blue="4a" green="42" red="35" type="rgb"/>
-                </LineBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ApplicationBackToAdminMouseClicked"/>
-          </Events>
-        </Component>
-      </SubComponents>
     </Container>
   </NonVisualComponents>
   <Properties>
@@ -174,23 +76,32 @@
           </Border>
         </Property>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="default"/>
+        </Property>
+      </AccessibilityProperties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="StatusBackTAdminHome" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="StatusBackTApplicantHome" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="803" max="32767" attributes="0"/>
                   <Component id="closeCheckStatus" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="docsUploads" min="-2" max="-2" attributes="0"/>
-                      <Component id="applicationStatus" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="btnStatus" min="-2" pref="74" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblstatus" min="-2" pref="79" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="applicationStatus" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="517" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -199,13 +110,22 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="closeCheckStatus" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="StatusBackTAdminHome" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="StatusBackTApplicantHome" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="178" max="32767" attributes="0"/>
-                  <Component id="applicationStatus" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="docsUploads" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="applicationStatus" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="btnStatus" min="-2" pref="52" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="155" max="32767" attributes="0"/>
+                          <Component id="lblstatus" min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -224,26 +144,15 @@
         <Component class="javax.swing.JLabel" name="applicationStatus">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu" size="15" style="0"/>
+              <Font name="Ubuntu" size="30" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Status"/>
+            <Property name="text" type="java.lang.String" value="Applicant Status"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="docsUploads">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu" size="15" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Documents"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="StatusBackTAdminHome">
+        <Component class="javax.swing.JLabel" name="StatusBackTApplicantHome">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4a" green="42" red="35" type="rgb"/>
@@ -264,8 +173,23 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="StatusBackTAdminHomeMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="StatusBackTApplicantHomeMouseClicked"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnStatus">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="lblstatus">
+          <Properties>
+            <Property name="alignment" type="int" value="1"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="0"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

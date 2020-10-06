@@ -6,6 +6,7 @@
 package rdphouses;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,13 +46,15 @@ public class ApplicantDelete extends javax.swing.JFrame {
         
         if(!success)
         {
-            lblerror_text.setText("Applicant userna does not exist");
+            lblerror_text.setText("Applicant username does not exist");
             clearText();
             return success;
         }
         
         return success;
     }
+    
+    
     private void clearText()
     {
         txtApplicantUsername.setText("");
@@ -64,8 +67,17 @@ public class ApplicantDelete extends javax.swing.JFrame {
     
     private void successMessage()
     {
-        lblerror_text.setForeground(Color.green);
-        lblerror_text.setText("data deleted successfully....");
+        JOptionPane.showMessageDialog(null, "data deleted successfully....");
+    }
+    
+    private void activeUser()
+    {
+        Login login = new Login();
+        if(login.getapplicantActive())
+        {
+            login.setVisible(true);
+            this.setVisible(false);
+        }
     }
 
     /**
@@ -199,6 +211,7 @@ public class ApplicantDelete extends javax.swing.JFrame {
         if(!deleteApplicant())return;
         successMessage();
         clearText();
+        activeUser();
     }//GEN-LAST:event_btndeleteApplicantMouseClicked
 
     /**

@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -26,9 +27,20 @@ public class Applicant extends javax.swing.JFrame {
     
     public Applicant() {
         initComponents();
+        getCurrentDate();
     }
     
-    private String filePath(){
+    
+    private String getCurrentDate()
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date date = new Date();
+        
+        return sdf.format(date);
+    }
+    
+    private String filePath()
+    {
        JFileChooser jfc = new JFileChooser();
        jfc.showOpenDialog(null);
        File f = jfc.getSelectedFile();
@@ -142,9 +154,9 @@ public class Applicant extends javax.swing.JFrame {
         return reg.getProofOFIncomeFile().equals("") || reg.getIDFile().equals("");
     }
     
-    private void addTodatabase(){
+    private void createApplicant(){
         PreparedStatement ps;
-        
+        AdminHome admin = new AdminHome();
         String query_statement = "insert into APPLICANT(applicant_fname,applicant_lname,applicant_id_no,applicant_DOB,"
                 + "applicant_gender,applicant_ethinicity,applicant_cell_no,applicant_email,applicant_username,"
                 + "applicant_password,applicant_status,applicant_comm_medium,"
@@ -178,7 +190,7 @@ public class Applicant extends javax.swing.JFrame {
             ps.setString(13, reg.getAddress1());
             ps.setString(14, reg.getAddress2());
             ps.setInt(15, postal_code);
-            ps.setInt(16, 2);
+            ps.setInt(16, admin.getAdminID());
             
             if(ps.executeUpdate() > 0)
             {
@@ -191,6 +203,64 @@ public class Applicant extends javax.swing.JFrame {
         {
             Logger.getLogger(Applicant.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private boolean allDocumentsUploaded()
+    {
+        if((reg.getProofOFIncomeFile().equals("")))
+            return false;
+        else if(reg.getIDFile().equals(""))
+            return false;
+        else  
+            return true;
+    }
+    
+    
+    private void createApplication()
+    {
+        if(!allDocumentsUploaded())return;
+        
+        AdminHome admin = new AdminHome();
+        RequiredFields applicant_id = new RequiredFields();
+        PreparedStatement ps;
+        double requested_amount = 150000;
+        double balance = 0;
+        setID();
+        String query = "insert into APPLICATION"
+                +" (application_status,application_amount,application_balance,"
+                +"application_date,Admin_id,applicant_id) values (?,?,?,?,?,?)";
+        try
+        {
+            ps = Connect2database.getConnection().prepareStatement(query);
+            
+            ps.setString(1,"unfunded");
+            ps.setDouble(2, requested_amount);
+            ps.setDouble(3,balance);
+            ps.setString(4, getCurrentDate());
+            ps.setInt(5, admin.getAdminID());
+            ps.setInt(6, applicant_id.getID());
+            
+            if(ps.executeUpdate() > 0)
+            {
+                warning.setForeground(Color.green);
+                warning.setText("Application was created successsfully....");
+                clearCells();               
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Applicant.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void setID()
+    {
+        RequiredFields set_id = new RequiredFields();
+        Registration reg = new Registration();
+        String query = "select id from APPLICANT where applicant_username=?";
+        
+        set_id.setFieldName("id");
+        set_id.setRFUsername(reg.getUsername());
+        set_id.setUserID(query);
     }
     
     private void loginDetails(){
@@ -795,7 +865,8 @@ public class Applicant extends javax.swing.JFrame {
         input_exist = UsernameUniqueness();
         if(input_exist)return;
         
-        addTodatabase();
+        createApplicant();
+        createApplication();
         
         loginDetails();
     }//GEN-LAST:event_RegisterApplicantMouseClicked

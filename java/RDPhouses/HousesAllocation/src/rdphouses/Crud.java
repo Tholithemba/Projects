@@ -31,11 +31,37 @@ public class Crud {
                 return true;
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Enter existing username");
+            JOptionPane.showMessageDialog(null, "error occured Please contact the administrator");
         }
-        
+  
         return false;
     }
+    
+    public boolean readData(String query)
+    {
+        Registration reg = new Registration();
+        CheckStatus cs = new CheckStatus();
+        
+        try{
+            ps = Connect2database.getConnection().prepareStatement(query);
+            ps.setString(2, reg.getUsername());
+            rs = ps.executeQuery();
+            if(rs.next())
+            {
+                String field_data = rs.getString("");
+                
+                cs.setStatus(query);
+                return true;
+            }
+                
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "error occured Please contact the administrator");
+        }
+  
+        return false;
+    }
+   
     
     public boolean deleteData(String query)
     {

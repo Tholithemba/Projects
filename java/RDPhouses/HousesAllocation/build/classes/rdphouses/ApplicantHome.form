@@ -60,20 +60,18 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="closeUpdateApllicant" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="329" max="-2" attributes="0"/>
-                  <Component id="warning_message" min="-2" pref="302" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="409" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="updateApplica" min="-2" max="-2" attributes="0"/>
-                      <Component id="viewStatus" min="-2" max="-2" attributes="0"/>
-                      <Component id="updatePassword" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="witdrawApplication" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="updateApplica" min="-2" max="-2" attributes="0"/>
+                          <Component id="viewStatus" min="-2" max="-2" attributes="0"/>
+                          <Component id="updatePassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="witdrawApplication" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="warning_message" min="-2" pref="302" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="274" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -84,7 +82,7 @@
                       <Component id="UpdateApplBackTAdminHome" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="closeUpdateApllicant" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                   <Component id="viewStatus" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="updateApplica" min="-2" max="-2" attributes="0"/>
@@ -92,7 +90,7 @@
                   <Component id="witdrawApplication" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="updatePassword" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="319" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
                   <Component id="warning_message" min="-2" pref="21" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>

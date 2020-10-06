@@ -5,17 +5,42 @@
  */
 package rdphouses;
 
+import java.awt.Color;
+
 /**
  *
  * @author tholithemba
  */
 public class CheckStatus extends javax.swing.JFrame {
 
+    
+    private static String applicat_status;
     /**
      * Creates new form CheckStatus
      */
     public CheckStatus() {
         initComponents();
+    }
+    
+    public void setStatus(String status)
+    {
+        applicat_status = status;
+    }
+    
+    private String getStatus()
+    {
+        return applicat_status;
+    }
+    
+    private void showStatus()
+    {
+        Registration reg = new Registration();
+        
+        if(getStatus().equals("partial funded"))
+            btnStatus.setForeground(Color.yellow);
+        else if(getStatus().equals("fully funded"))
+            btnStatus.setForeground(Color.green);
+  
     }
 
     /**
@@ -28,79 +53,25 @@ public class CheckStatus extends javax.swing.JFrame {
     private void initComponents() {
 
         application = new javax.swing.JPanel();
-        label10 = new java.awt.Label();
-        label3app = new java.awt.Label();
-        textField1 = new java.awt.TextField();
-        label3app1 = new java.awt.Label();
-        ApplicationBackToAdmin = new javax.swing.JLabel();
         documents = new javax.swing.JPanel();
         closeCheckStatus = new javax.swing.JLabel();
         applicationStatus = new javax.swing.JLabel();
-        docsUploads = new javax.swing.JLabel();
-        StatusBackTAdminHome = new javax.swing.JLabel();
+        StatusBackTApplicantHome = new javax.swing.JLabel();
+        btnStatus = new javax.swing.JButton();
+        lblstatus = new java.awt.Label();
 
         application.setBackground(new java.awt.Color(53, 66, 74));
         application.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 73, 29), 2));
-
-        label10.setBackground(new java.awt.Color(53, 66, 74));
-        label10.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        label10.setForeground(java.awt.Color.white);
-        label10.setText("Application Amount");
-
-        label3app.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        label3app.setForeground(new java.awt.Color(232, 73, 29));
-        label3app.setText("Apply");
-
-        textField1.setText("textField1");
-
-        label3app1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        label3app1.setForeground(java.awt.Color.white);
-        label3app1.setText("Application");
-
-        ApplicationBackToAdmin.setBackground(new java.awt.Color(53, 66, 74));
-        ApplicationBackToAdmin.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        ApplicationBackToAdmin.setForeground(java.awt.Color.white);
-        ApplicationBackToAdmin.setText("Back");
-        ApplicationBackToAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
-        ApplicationBackToAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ApplicationBackToAdminMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout applicationLayout = new javax.swing.GroupLayout(application);
         application.setLayout(applicationLayout);
         applicationLayout.setHorizontalGroup(
             applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(applicationLayout.createSequentialGroup()
-                .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(applicationLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label3app1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(applicationLayout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addComponent(label3app, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(applicationLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ApplicationBackToAdmin)))
-                .addContainerGap(59, Short.MAX_VALUE))
+            .addGap(0, 124, Short.MAX_VALUE)
         );
         applicationLayout.setVerticalGroup(
             applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, applicationLayout.createSequentialGroup()
-                .addComponent(ApplicationBackToAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(label3app1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(label3app, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+            .addGap(0, 23, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,24 +87,25 @@ public class CheckStatus extends javax.swing.JFrame {
             }
         });
 
-        applicationStatus.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        applicationStatus.setFont(new java.awt.Font("Ubuntu", 1, 30)); // NOI18N
         applicationStatus.setForeground(java.awt.Color.white);
-        applicationStatus.setText("Status");
+        applicationStatus.setText("Applicant Status");
 
-        docsUploads.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
-        docsUploads.setForeground(java.awt.Color.white);
-        docsUploads.setText("Documents");
-
-        StatusBackTAdminHome.setBackground(new java.awt.Color(53, 66, 74));
-        StatusBackTAdminHome.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        StatusBackTAdminHome.setForeground(java.awt.Color.white);
-        StatusBackTAdminHome.setText("Back");
-        StatusBackTAdminHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
-        StatusBackTAdminHome.addMouseListener(new java.awt.event.MouseAdapter() {
+        StatusBackTApplicantHome.setBackground(new java.awt.Color(53, 66, 74));
+        StatusBackTApplicantHome.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        StatusBackTApplicantHome.setForeground(java.awt.Color.white);
+        StatusBackTApplicantHome.setText("Back");
+        StatusBackTApplicantHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(53, 66, 74), 0));
+        StatusBackTApplicantHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                StatusBackTAdminHomeMouseClicked(evt);
+                StatusBackTApplicantHomeMouseClicked(evt);
             }
         });
+
+        btnStatus.setBackground(java.awt.Color.red);
+
+        lblstatus.setAlignment(java.awt.Label.CENTER);
+        lblstatus.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout documentsLayout = new javax.swing.GroupLayout(documents);
         documents.setLayout(documentsLayout);
@@ -141,27 +113,36 @@ public class CheckStatus extends javax.swing.JFrame {
             documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, documentsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(StatusBackTAdminHome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(StatusBackTApplicantHome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 803, Short.MAX_VALUE)
                 .addComponent(closeCheckStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(documentsLayout.createSequentialGroup()
-                .addGap(231, 231, 231)
+                .addGap(284, 284, 284)
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(docsUploads)
-                    .addComponent(applicationStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 517, Short.MAX_VALUE))
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addComponent(btnStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(applicationStatus))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         documentsLayout.setVerticalGroup(
             documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(documentsLayout.createSequentialGroup()
                 .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(closeCheckStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(StatusBackTAdminHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
-                .addComponent(applicationStatus)
-                .addGap(18, 18, 18)
-                .addComponent(docsUploads)
-                .addGap(134, 134, 134))
+                    .addComponent(StatusBackTApplicantHome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(documentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(documentsLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(applicationStatus)
+                        .addGap(80, 80, 80)
+                        .addComponent(btnStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, documentsLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                        .addComponent(lblstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(183, 183, 183))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,19 +160,14 @@ public class CheckStatus extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ApplicationBackToAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ApplicationBackToAdminMouseClicked
-        new AdminHome().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_ApplicationBackToAdminMouseClicked
-
     private void closeCheckStatusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeCheckStatusMouseClicked
         System.exit(0);
     }//GEN-LAST:event_closeCheckStatusMouseClicked
 
-    private void StatusBackTAdminHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StatusBackTAdminHomeMouseClicked
+    private void StatusBackTApplicantHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StatusBackTApplicantHomeMouseClicked
         new ApplicantHome().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_StatusBackTAdminHomeMouseClicked
+    }//GEN-LAST:event_StatusBackTApplicantHomeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -229,16 +205,12 @@ public class CheckStatus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ApplicationBackToAdmin;
-    private javax.swing.JLabel StatusBackTAdminHome;
+    private javax.swing.JLabel StatusBackTApplicantHome;
     private javax.swing.JPanel application;
     private javax.swing.JLabel applicationStatus;
+    private javax.swing.JButton btnStatus;
     private javax.swing.JLabel closeCheckStatus;
-    private javax.swing.JLabel docsUploads;
     private javax.swing.JPanel documents;
-    private java.awt.Label label10;
-    private java.awt.Label label3app;
-    private java.awt.Label label3app1;
-    private java.awt.TextField textField1;
+    private java.awt.Label lblstatus;
     // End of variables declaration//GEN-END:variables
 }

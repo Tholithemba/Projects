@@ -29,13 +29,40 @@ public class FunderDelete extends javax.swing.JFrame {
         return true;
     }
     
+    private void setValue()
+    {
+        Registration reg = new Registration();
+        reg.setUsername(txtfunderUsername.getText());
+    }
+    
+    
     private boolean deleteFunder()
     {
         Crud crud = new Crud();
         String query = "delete from FUNDER where funder_email=?";
+        boolean success = crud.deleteData(query);
         
-        return crud.deleteData(query);
+        if(!success)
+        {
+            lblerror_text.setText("Applicant username does not exist");
+            clearText();
+            return success;
+        }
+        
+        return success;
     }
+    
+    
+    private void clearText()
+    {
+        txtfunderUsername.setText("");
+    }
+    
+    private void clearErrorMessage()
+    {
+        lblerror_text.setText("");
+    }
+
     
     private void successMessage()
     {
@@ -168,9 +195,12 @@ public class FunderDelete extends javax.swing.JFrame {
 
     private void btndeleteFunderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteFunderMouseClicked
        
+        clearErrorMessage();
         if(!validateInput())return;
+        setValue();
         if(!deleteFunder())return;
         successMessage();
+        clearText();
     }//GEN-LAST:event_btndeleteFunderMouseClicked
 
     /**

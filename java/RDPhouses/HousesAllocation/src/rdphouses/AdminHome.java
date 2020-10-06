@@ -7,13 +7,31 @@ package rdphouses;
  */
 public class AdminHome extends javax.swing.JFrame {
 
+    private static int admin_id;
     /**
      * Creates new form AdminHome
      */
     public AdminHome() {
         initComponents();
+        setAdminID();
     }
-
+    
+    public void setAdminID()
+    {
+        Registration reg = new Registration();
+        RequiredFields rf  = new RequiredFields();
+        String query = "select admin_id from ADMINISTRATOR "
+                + "where admin_username=?";
+        rf.setFieldName("admin_id");
+        rf.setRFUsername(reg.getUsername());
+        rf.setUserID(query);
+        admin_id = rf.getID();
+    }
+    
+    public int getAdminID()
+    {
+        return admin_id;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -21,6 +21,7 @@ public class RequiredFields {
     private static String field_name;
     private static String field_data;
     private static String username;
+    private static int user_id;
     
     public void setFieldName(String set_field){
         field_name = set_field;
@@ -38,6 +39,16 @@ public class RequiredFields {
         return field_data;
     }
     
+    public void setID(int id)
+    {
+        user_id = id;
+    }
+    
+    public int getID()
+    {
+        return user_id;
+    }
+    
     public void setRFUsername(String set_username){
         username = set_username;
     }
@@ -46,8 +57,8 @@ public class RequiredFields {
         return username;
     }
     
-    public String getDataTobeUpdated(String query_statement){
-
+    public void getDataTobeUpdated(String query_statement)
+    {
         PreparedStatement ps;
         ResultSet rs;
 
@@ -62,9 +73,26 @@ public class RequiredFields {
 
         } catch (SQLException ex) {
             Logger.getLogger(RequiredFields.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return getFieldData();    
+        }   
+    }
+    
+    public void setUserID(String query_statement)
+    {
+        PreparedStatement ps;
+        ResultSet rs;
+
+        try{
+            ps = Connect2database.getConnection().prepareStatement(query_statement);
+            ps.setString(1, getRFUsername());
+            
+            rs = ps.executeQuery();
+            
+            if(rs.next())
+               setID(rs.getInt(getFieldName()));
+
+        } catch (SQLException ex) {
+            Logger.getLogger(RequiredFields.class.getName()).log(Level.SEVERE, null, ex);
+        }   
     }
     
     public void addUpdatedData(String query_statement){
